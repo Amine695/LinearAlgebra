@@ -27,10 +27,11 @@ void null_matrix(matrix m, DIM)
 matrix init_matrix(DIM)
 {
     matrix m = malloc(sizeof(int*) * n);
-    //m[0] = malloc(sizeof(int) * n * n);
+    m[0] = malloc(sizeof(int) * n * n);
 
     for_(i,n)
-        m[i] = malloc(sizeof(int) * n); //each rows
+        m[i] = m[0] + n * i;
+        //m[i] = malloc(sizeof(int) * n); //each rows
     null_matrix(m,n);
 
     return m;
@@ -79,9 +80,9 @@ void freeMatrix(matrix m)
 /**
  * Display the matrix m to stdout
 */
-void displayMatrix(matrix m,DIM)
+void displayMatrix(char title[],matrix m,DIM)
 {
-
+    printf("\n%s \n",title);
     for_(i,n)
     {   
         for_(j,n)
@@ -122,7 +123,7 @@ void pivot(matrix a, matrix p, DIM)
     {
         int max_j = i;
         foreach(j,i,n)
-            if(fabs(a[j][i]) > fabs(a[max_j][i]))
+            if(abs(a[j][i]) > abs(a[max_j][i]))
                 max_j = j;
         
         if(max_j != i)
@@ -148,6 +149,7 @@ void LU(matrix A, matrix L, matrix U, matrix P, DIM,prime)
 
     matrix Abis = mat_mult(P,A,n,p);
 
+    int tmp = 0;
     for_(i,n)
         L[i][i] = 1;
     
@@ -160,15 +162,20 @@ void LU(matrix A, matrix L, matrix U, matrix P, DIM,prime)
                 s = 0;
                 foreach(k, 0, j)
                     s+= (long) ((L[j][k] * U[k][i]) % p);
-                U[j][i] = (Abis[j][i] - s) % p;
-                //U[j][i] = Abis[j][i] - s;
+                tmp = sub(A[j][i],s,p);
+                U[j][i] = sub(Abis[j][i],s,p);
+                if(U[j][i] < 0) U[j][i] += p;
+                if(U[j][i] > p) U[j][i] -= p;
             }
             if(j > i)
             {
                 s = 0;
                 foreach(k, 0, i)
                     s+= (long) ((L[j][k] * U[k][i]) % p);
-                L[j][i] = (long) ((Abis[j][i] - s) * modInverse(U[i][i],p)) % p;// inversion modulaire
+                tmp = sub(Abis[j][i],s,p);
+                L[j][i] = (long) (tmp * inv(U[i][i],p)) % p;// inversion modulaire
+                if(L[j][i] < 0) L[j][i] += p;
+                if(L[j][i] > p) L[j][i] -= p;
             }
         }
 
@@ -190,6 +197,9 @@ void correction(matrix A, matrix L, matrix U, matrix P, DIM, prime)
             for_(k,n){
                 PA[i][j] += (long) ((P[i][k] * A[k][j]) % p);
                 LU[i][j] += (long) ((L[i][k] * U[k][j]) % p);
+
+                if(LU[i][j] < 0) LU[i][j] += p;
+                if(LU[i][j] > p) LU[i][j] -= p;
             }
 
     for_(i,n)
@@ -200,6 +210,7 @@ void correction(matrix A, matrix L, matrix U, matrix P, DIM, prime)
             else
                 ok = false;
         }
+
     if(ok)
         printf("\nPA == LU : OK !\n"); 
     else
@@ -210,3 +221,26 @@ void correction(matrix A, matrix L, matrix U, matrix P, DIM, prime)
 
 }
 
+
+void RunLU(matrix A, matrix P, matrix L, matrix U, DIM, prime)
+{
+    printf("************** LU decomposition ***************\n");
+
+    // Computation and time measurements
+    double start,end,time_elapsed;
+    start = clock();
+    LU(A,L,U,P,n,p);
+    end = clock();
+    time_elapsed = ((double)end - start) / CLOCKS_PER_SEC;
+    
+    // Show results
+   
+    displayMatrix("A matrix",A,n);
+    displayMatrix("L matrix",L,n);
+    displayMatrix("U matrix",U,n);
+    displayMatrix("P matrix",P,n);
+
+     // Check if PA == LU
+    correction(A,L,U,P,n,p);
+    printf("Time duration with n = %d : %f s\n",n,time_elapsed);
+}
