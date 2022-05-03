@@ -2,125 +2,223 @@
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
+#include <string.h>
 #include <unistd.h>
 #include "LinearSystem.h"
 #include "MatrixInv.h"
 #include "Strassen.h"
+#include "Benchmarks.h"
+
+/**
+ * @file file that contains the main function and launch the program.
+*/
 
 
-
-int main(void)
+/**
+ * @brief Function that launch the project when the user input n and p.
+*/
+void LaunchProject(matrix A,matrix Abis,matrix L,matrix U, matrix P, matrix S1, matrix S2,
+            int Z[], int X[], int B[], DIM, prime)
 {
-    //int k = 2;
-    //int n = pow(2,k);
-    int n = 4;
-    int p = 293;
-    //clock_t start,end;
-    //double time_elapsed;
+    printf("************** Algorithmic Project ***************\n\n");
+    //LU decomposition
+    RunLU(A,P,L,U,n,p);
+    // Linear system solving
+    RunLS(L,U,B,Z,X,n,p);
+    // Naive Inverse 
+    RunNaiveInverse(A,L,U,P,n,p);
+    // Strassen Inverse 
+    RunStrassenInv(Abis,n,p);
+    // Strassen multiplication
+    RunStrassenMult(S1,S2,n,p); 
+
+}
+
+/**
+ * @brief Function that launch the benchmarks with real time execution
+*/
+void LaunchBenchmarks(matrix A,matrix L,matrix U,matrix P,matrix Abis,matrix S1, matrix S2,
+                        DIM, prime,FILE *fp1, FILE *fp2,FILE *fp3,FILE *fp4,FILE *fp5)
+{
+
+    BenchmarkNaiveInverse(A,L,U,P,n,p,fp1); 
+    BenchmarkStrassenInv(Abis,n,p,fp2);
+    //BenchmarksNaiveMul(S1,S2,n,p,fp3);
+    //BenchmarkStrassenMult(S1,S2,n,p,fp4);
+    BenchmarkStrassenInvAndMult(Abis,n,p,fp5);
+
+}
+
+/**
+ * @brief Function that take the arguments and check that all is good
+*/
+void GetArguments(int argc, char *argv[], int *n, int *p)
+{
+    if(argc != 5 && argc != 2)
+    {
+        printf("Error : argument missing required\n");
+        exit(1);
+    }
+    
+    if(strcmp(argv[1],"--n")==0)
+    {
+        *n = atoi(argv[2]);
+        if(*n % 2 != 0)
+        {
+            printf("Error : n must be a power of 2\n");
+            exit(1);
+        }
+
+    }
+    else
+    {
+        printf("Error : size argument incorrect\n");
+        exit(-1);
+    }
+        
+    if(strcmp(argv[3],"--p")==0)
+    {
+        *p = atoi(argv[4]);
+        if(isPrime(p) != 0)
+        {
+            printf("Error : p must be a prime number\n");
+            exit(-1);
+        }
+    }
+        
+}
+
+
+/**
+ * @brief Main function that launch the program
+*/
+int main(int argc, char* argv[])
+{
+    int n,p;
     srand(time(NULL));
-    printf("************** Algorithmic Project ***************\n");
-    //sleep(1);
-    printf("************** LU decomposition ***************\n");
-    //printf("\nEnter the dimension of the matrix: ");
-    //scanf("%d",&n);
 
-     // Initialisation
-    matrix A, P, L, U;
-    L = init_matrix(n);
-    P = init_matrix(n);
-    U = init_matrix(n);
-/*
+    // if the user type benchmarks, we run LaunchBenchmarks
+    if(strcmp(argv[1],"benchmarks") == 0)
+    {
+        int k = 1; 
 
-    // Load A3 into A
-    //A = loadMatrix(A3,n);
-    A = generate(n,p);
-    
-    // Computation and time measurements
-    start = clock();
-    LU(A,L,U,P,n,p);
-    end = clock();
-    time_elapsed = ((double)end - start) / CLOCKS_PER_SEC;
-    
-    // Show results
-    printf("A matrix:\n\n");
-    displayMatrix(A,n);
-    printf("\nL matrix:\n\n");
-    displayMatrix(L,n);
-    printf("\nU matrix:\n\n");
-    displayMatrix(U,n);
-    printf("\nP matrix:\n\n");
-    displayMatrix(P,n);
+        // maximum size of 2^k
+        int max;      
 
-     // Check if PA == LU
-    correction(A,L,U,P,n,p);
-    printf("Time duration : %f s\n",time_elapsed);
+        // a prime number fixed
+        int p = 131; 
 
-    sleep(1);
-    printf("\n\n************** Linear system solving ***************\n");
+        // To export data
+        FILE * fp1;
+        FILE * fp2;
+        FILE * fp3;
+        FILE * fp4;
+        FILE * fp5;
 
-    int B[n]; // solutions
-    int Z[n]; // LZ = B
-    int X[n]; // UX = Z
-    generateSolution(B,n,p);
-    InitVector(Z,X,n);
-    
+        // we grab the argument from user
+        max = atoi(argv[2]);
+        
+        // path location 
+        char NaiveInvPath[] = "benchmarks/NaiveInversion.txt";
+        char StrassenInvPath[] = "benchmarks/StrassenInversion.txt";
+        char NaiveMultPath[] = "benchmarks/NaiveMultiplication.txt";
+        char StrassenMultPath[] = "benchmarks/StrassenMultiplication.txt";
+        char StrassenInvMultPath[] = "benchmarks/StrassenInversionMultiplication.txt";
+        
+        // open files
+        fp1 = fopen(NaiveInvPath,"w+");
+        fp2 = fopen(StrassenInvPath,"w+");
+        fp3 = fopen(NaiveMultPath,"w+");
+        fp4 = fopen(StrassenMultPath,"w+");
+        fp5 = fopen(StrassenInvMultPath,"w+");
 
-    // Computation and time measurements
-    start = clock();
-    LinearSystem(L,U,Z,B,X,n,p);
-    end = clock();
-    time_elapsed = ((double)end - start) / CLOCKS_PER_SEC;
+        fprintf(fp1,"Size\t\tTime(s)");
+        fprintf(fp2,"Size\t\tTime(s)");
+        fprintf(fp3,"Size\t\tTime(s)");
+        fprintf(fp4,"Size\t\tTime(s)");
+        fprintf(fp5,"Size\t\tTime(s)");
+        
+        // benchmarks loop : we start from 2^1 to 2^max
+        while(k <= max)
+        {
+            // new size
+            int n = pow(2,k);
 
-    // Show results
-    DisplaySolutions(B,X,Z,n);
+            // initialize size matrices
+            matrix A,L,U,P,Abis,S1,S2;
+            L = init_matrix(n);
+            P = init_matrix(n);
+            U = init_matrix(n);
 
-    // Check if LZ = B and UX = Z
-    correctionLS(L,U,Z,B,X,n,p);
-    printf("Time duration : %f s\n",time_elapsed);
+            // generate a random matrix,Abis for Strassen Inverse,S1 and S2 for the Strassen multiplication
+            A = generate(n,p);
+            S1 = generate(n,p);
+            S2 = generate(n,p);
+            Abis = Copy(A,n);
+            
+            // Launch the benchmarks
+            LaunchBenchmarks(A,L,U,P,Abis,S1,S2,n,p,fp1,fp2,fp3,fp4,fp5);
+            printf("\n");
+            // increment size counter
+            k++;
 
-    sleep(1);
-    printf("\n\n************** Inverse matrix **********************\n");
+            // Memory free
+            freeMatrix(Abis);
+            freeMatrix(A);
+            freeMatrix(S1);
+            freeMatrix(S2);
+            freeMatrix(L);
+            freeMatrix(U);
+            freeMatrix(P);
+        }
+        printf("\nData successfully exported in the benchmarks directory! \n");
+        printf("Take a look in the plot directory! \n");
 
-    // The inverse matrix 
-    int s[n+1][n+1]; 
+        // close files
+        fclose(fp1);
+        fclose(fp2);
+        fclose(fp3);
+        fclose(fp4);
+        fclose(fp5);
 
-    // Computation and time measurements
-    start = clock();
-    InverseMatrix(A,s,n,p);
-    end = clock();
+    }
+    // otherwise, we run LaunchProject
+    else
+    {
+        // we take arguments from user 
+        GetArguments(argc,argv,&n,&p);
 
-    // Show results
-    DisplayInv(s,n);
-    time_elapsed = ((double)end - start) / CLOCKS_PER_SEC;
+        // same procedure as in the if
+        matrix A,Abis, P, L, U,S1,S2;
+        L = init_matrix(n);
+        P = init_matrix(n);
+        U = init_matrix(n);
+        Abis = init_matrix(n);
+        A = generate(n,p);
+        S1 = generate(n,p);
+        S2 = generate(n,p);
+        Abis = Copy(A,n);
+        
+        // for the linear system solving
+        int B[n]; // Solutions vector
+        int Z[n]; // LZ = B
+        int X[n]; // UX = Z
+        
+        // Launch all the algorithms
+        LaunchProject(A,Abis,L,U,P,S1,S2,Z,X,B,n,p);
+        printf("\n");
+
+        // Memory free
+        freeMatrix(Abis);
+        freeMatrix(A);
+        freeMatrix(L);
+        freeMatrix(U);
+        freeMatrix(P);
+        freeMatrix(S1);
+        freeMatrix(S2);
 
 
-    // Check if A * InvA = I
-    correctionInv(A,s,n,p);  
-
-    sleep(1); */
-    printf("\n\n************** Strassen Algorithm **********************\n");  
-    int A5[][4] = { { 3, 4, 7, 2},
-                    { 1, 9, 7, 6},
-                    { 2, 4, 1, 9},
-                    { 10, 4, 12, 11}};
-
-
-    //displayStrassen("test",t,2,2);
-
-    matrix As = loadMatrix(A5,n);
-    displayStrassen("As",As,n);
-    matrix inv = InvStrassen(As,n,p);
-    //displayStrassen("A",As,n);
-    displayStrassen("Inv:",inv,n); 
-
-
-    freeMatrix(As);
-    freeMatrix(inv);
-    //freeMatrix(A);
-    freeMatrix(L);
-    freeMatrix(U);
-    freeMatrix(P);
-
+    }
 
     return 0;
 }
