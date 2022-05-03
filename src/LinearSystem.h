@@ -6,3 +6,4 @@ void generateSolution(int B[],DIM,prime);
 void InitVector(int Z[], int X[], DIM);
 void DisplaySolutions(int B[],int X[],int Z[] ,DIM);
 void correctionLS(matrix L, matrix U, int Z[], int B[], int X[],DIM, prime);
+void RunLS(matrix L, matrix U, int B[], int Z[], int X[], DIM, prime);

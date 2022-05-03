@@ -9,7 +9,7 @@
 
 
 /**
- * initialize the square matrix
+ *  @brief initialize the square matrix to 0
 */
 void null_matrix(matrix m, DIM)
 {
@@ -21,7 +21,7 @@ void null_matrix(matrix m, DIM)
 
 
 /**
- * allocate memory for the matrix and initialize it
+ * @brief allocate memory for the matrix and initialize it
  * @return m : matrix n*n initialized
 */
 matrix init_matrix(DIM)
@@ -31,16 +31,26 @@ matrix init_matrix(DIM)
 
     for_(i,n)
         m[i] = m[0] + n * i;
-        //m[i] = malloc(sizeof(int) * n); //each rows
     null_matrix(m,n);
 
     return m;
 }
 
+/**
+ * @brief Copy a matrix to a new one
+*/
+matrix Copy(matrix m,DIM)
+{
+    matrix C = init_matrix(n);
 
+    for_(i,n)
+        for_(j,n)
+            C[i][j] = m[i][j];
+    return C;
+}
 
 /**
- * load the values given in parameter into a new square matrix
+ *  @brief load a 2D array into a new square matrix
  * @return m : the new matrix
 */
 matrix loadMatrix(void *s, DIM)
@@ -48,12 +58,12 @@ matrix loadMatrix(void *s, DIM)
     matrix m = init_matrix(n);
     for_(i,n)
         for_(j,n)
-            m[i][j] = ((int(*)[n]) s)[i][j]; // s is a pointer to an array of n doubles
+            m[i][j] = ((int(*)[n]) s)[i][j]; // s is a pointer to an array of n int
     return m;
 }
 
 /**
- * Generate a n*n matrix of random integers number
+ *  @brief Generate a n*n matrix of random integers number
  * We can adjust the random range for performances mesurements 
  * @return A : the random matrix
 */
@@ -68,7 +78,7 @@ matrix generate(DIM,prime)
 }
 
 /**
- * free the matrix and all elements within it
+ *  @brief free the matrix and all elements within it
 */
 void freeMatrix(matrix m)
 {   
@@ -78,7 +88,7 @@ void freeMatrix(matrix m)
 
 
 /**
- * Display the matrix m to stdout
+ *  @brief Display the matrix m to stdout 
 */
 void displayMatrix(char title[],matrix m,DIM)
 {
@@ -95,35 +105,65 @@ void displayMatrix(char title[],matrix m,DIM)
 }
 
 /**
- * Compute the matrix product between a and b
- * @return : matrix c , result of the product
+ * @brief Function that compute the matrices product
 */
-matrix mat_mult(matrix a, matrix b, DIM, prime)
+matrix matmul(matrix a, matrix b, DIM , prime)
 {
-    matrix c = init_matrix(n);
+    matrix res = init_matrix(n);
+    int tmp;
+    for ( int i = 0; i < n; i++ )
+    {
+        for ( int j = 0; j < n; j++ )
+        {
+            tmp = 0;    
+            for (int k = 0; k < n; k++) {
+                tmp = (long) ( a[i][k] * b[k][j]) % p;
+                if(tmp < 0) tmp += p;
+                res[i][j] = (res[i][j] + tmp) % p; 
+                
+            }
+        }
 
+    }
+    return res;
+ 
+}
+
+/**
+ * @brief Function that create an identity matrix
+ * @return res
+*/
+matrix Identity(DIM)
+{
+    matrix identity = init_matrix(n);
     for_(i,n)
         for_(j,n)
-            for_(k,n)
-                c[i][j] += (long) ((a[i][k] * b[k][j]) % p) ;
-    return c;
+        {
+            if(i == j)
+                identity[i][j] = 1;
+            else
+                identity[i][j] = 0;
+        }
+    return identity;
 }
 
 
+
 /**
- * Compute the permutation (swapping) of matrices using the pivoting  process 
+ *  @brief Compute the permutation (swapping) of rows using the pivoting  process 
 */
 void pivot(matrix a, matrix p, DIM)
 {
     for_(i,n)
         for_(j,n)
-            p[i][j] = (i == j); // only the diagonal coefficients
+            p[i][j] = (i == j); // p is an identity matrix
+            
     
     for_(i,n)
     {
         int max_j = i;
         foreach(j,i,n)
-            if(abs(a[j][i]) > abs(a[max_j][i]))
+            if(a[j][i] > a[max_j][i])
                 max_j = j;
         
         if(max_j != i)
@@ -138,68 +178,80 @@ void pivot(matrix a, matrix p, DIM)
 }
 
 /**
- * Compute the LU decomposition using the pivot function
+ *  @brief Compute the LU decomposition using the pivot function
 */
 void LU(matrix A, matrix L, matrix U, matrix P, DIM,prime)
 {
+    // On initialise L et U à 0
     null_matrix(L,n);
     null_matrix(U,n);
+
+    // calcul la matrice de permutation P 
     pivot(A,P,n);
 
 
-    matrix Abis = mat_mult(P,A,n,p);
-
-    int tmp = 0;
+    int tmp = 0,tmp2 = 0;
     for_(i,n)
-        L[i][i] = 1;
+        L[i][i] = 1; // identity matrix
     
     for_(i,n)
         for_(j,n)
         {
             int s;
+            // on calcul U
             if(j <= i)
             {
                 s = 0;
                 foreach(k, 0, j)
-                    s+= (long) ((L[j][k] * U[k][i]) % p);
-                tmp = sub(A[j][i],s,p);
-                U[j][i] = sub(Abis[j][i],s,p);
+                    s+= (long) ((L[j][k] * U[k][i]));
+                tmp2 = s % p;
+                tmp = sub(A[j][i],tmp2,p);  
+                U[j][i] = sub(A[j][i],tmp2,p);
+
+                // readjustment in case we exceed p or it goes below 0
                 if(U[j][i] < 0) U[j][i] += p;
                 if(U[j][i] > p) U[j][i] -= p;
-            }
-            if(j > i)
+            }   
+                
+            // On calcul L
+            if(j >= i)
             {
                 s = 0;
                 foreach(k, 0, i)
-                    s+= (long) ((L[j][k] * U[k][i]) % p);
-                tmp = sub(Abis[j][i],s,p);
-                L[j][i] = (long) (tmp * inv(U[i][i],p)) % p;// inversion modulaire
+                    s+= (long) ((L[j][k] * U[k][i]));
+                tmp2 = s % p;
+                tmp = sub(A[j][i],tmp2,p);
+                L[j][i] = (long) (tmp * inv(U[i][i],p)) % p;// modular inverse
+
+                // readjustment in case we exceed p or it goes below 0
                 if(L[j][i] < 0) L[j][i] += p;
                 if(L[j][i] > p) L[j][i] -= p;
             }
         }
 
-    freeMatrix(Abis);
+    //freeMatrix(Abis);
 
 }
 
 
 /**
- * Check if the LU decomposition is correct
+ *  @brief Check if the LU decomposition is correct by making the product of L and U
 */
 void correction(matrix A, matrix L, matrix U, matrix P, DIM, prime)
 {
     matrix PA = init_matrix(n);
     matrix LU = init_matrix(n);
     bool ok = false;
+
+    // Compute P.A and L.U
     for_(i,n)
         for_(j,n)
             for_(k,n){
                 PA[i][j] += (long) ((P[i][k] * A[k][j]) % p);
                 LU[i][j] += (long) ((L[i][k] * U[k][j]) % p);
 
-                if(LU[i][j] < 0) LU[i][j] += p;
-                if(LU[i][j] > p) LU[i][j] -= p;
+                if(LU[i][j] < 0) LU[i][j] += p; //readjustment in case L[i][j] < 0
+                if(LU[i][j] > p) LU[i][j] -= p; //readjustment in case we exceed p
             }
 
     for_(i,n)
@@ -222,6 +274,9 @@ void correction(matrix A, matrix L, matrix U, matrix P, DIM, prime)
 }
 
 
+/**
+ *  @brief Run the LU decomposition to make the main function cleaner
+*/
 void RunLU(matrix A, matrix P, matrix L, matrix U, DIM, prime)
 {
     printf("************** LU decomposition ***************\n");
