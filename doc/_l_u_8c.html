@@ -1,0 +1,600 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Fondements de l&#39;algorithmique algébrique: Référence du fichier Algorithmique algébrique/Projet/algebraic-algorithmic-project/src/LU.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="polytech.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Fondements de l&#39;algorithmique algébrique<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">FLAG</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_37c06db2d04acfe4d30b0395cd83bd7c.html">Algorithmique algébrique</a></li><li class="navelem"><a class="el" href="dir_555637fee2d22d2b0161dc6808ca1524.html">Projet</a></li><li class="navelem"><a class="el" href="dir_a21f8dc8f7cad282ef35f1eaa0856255.html">algebraic-algorithmic-project</a></li><li class="navelem"><a class="el" href="dir_cdd63df80f40e74593db03ce6f4a95e2.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier LU.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>File that compute the LU decomposition.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_l_u_8h_source.html">LU.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_tools_8h_source.html">Tools.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:aefd56c48301285547b4bd085fb7e1b15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_u_8c.html#aefd56c48301285547b4bd085fb7e1b15">null_matrix</a> (<a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> m, <a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>)</td></tr>
+<tr class="memdesc:aefd56c48301285547b4bd085fb7e1b15"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialize the square matrix to 0  <a href="_l_u_8c.html#aefd56c48301285547b4bd085fb7e1b15">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aefd56c48301285547b4bd085fb7e1b15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97c87b547be94ce5df065264e7dc01e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_u_8c.html#a97c87b547be94ce5df065264e7dc01e4">init_matrix</a> (<a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>)</td></tr>
+<tr class="memdesc:a97c87b547be94ce5df065264e7dc01e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">allocate memory for the matrix and initialize it  <a href="_l_u_8c.html#a97c87b547be94ce5df065264e7dc01e4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a97c87b547be94ce5df065264e7dc01e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53421b2b361fe1ad0427fd3bc65f22c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_u_8c.html#a53421b2b361fe1ad0427fd3bc65f22c3">Copy</a> (<a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> m, <a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>)</td></tr>
+<tr class="memdesc:a53421b2b361fe1ad0427fd3bc65f22c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a matrix to a new one.  <a href="_l_u_8c.html#a53421b2b361fe1ad0427fd3bc65f22c3">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a53421b2b361fe1ad0427fd3bc65f22c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac611b92a60a8b363789e7c294febe760"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_u_8c.html#ac611b92a60a8b363789e7c294febe760">loadMatrix</a> (void *s, <a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>)</td></tr>
+<tr class="memdesc:ac611b92a60a8b363789e7c294febe760"><td class="mdescLeft">&#160;</td><td class="mdescRight">load a 2D array into a new square matrix  <a href="_l_u_8c.html#ac611b92a60a8b363789e7c294febe760">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac611b92a60a8b363789e7c294febe760"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9e75f650f371aba794d6e35247ba57b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_u_8c.html#ac9e75f650f371aba794d6e35247ba57b">generate</a> (<a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>, <a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>)</td></tr>
+<tr class="memdesc:ac9e75f650f371aba794d6e35247ba57b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a n*n matrix of random integers number We can adjust the random range for performances mesurements.  <a href="_l_u_8c.html#ac9e75f650f371aba794d6e35247ba57b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ac9e75f650f371aba794d6e35247ba57b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f11018544139fb5a6fd763ee2093db3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_u_8c.html#a7f11018544139fb5a6fd763ee2093db3">freeMatrix</a> (<a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> m)</td></tr>
+<tr class="memdesc:a7f11018544139fb5a6fd763ee2093db3"><td class="mdescLeft">&#160;</td><td class="mdescRight">free the matrix and all elements within it  <a href="_l_u_8c.html#a7f11018544139fb5a6fd763ee2093db3">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a7f11018544139fb5a6fd763ee2093db3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab17fcd3423f8ea0d1fe019bed426f382"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_u_8c.html#ab17fcd3423f8ea0d1fe019bed426f382">displayMatrix</a> (char title[], <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> m, <a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>)</td></tr>
+<tr class="memdesc:ab17fcd3423f8ea0d1fe019bed426f382"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display the matrix m to stdout.  <a href="_l_u_8c.html#ab17fcd3423f8ea0d1fe019bed426f382">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab17fcd3423f8ea0d1fe019bed426f382"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbddb63c6767f77686ce076ea12e8dce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_u_8c.html#adbddb63c6767f77686ce076ea12e8dce">matmul</a> (<a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> a, <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> b, <a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>, <a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>)</td></tr>
+<tr class="memdesc:adbddb63c6767f77686ce076ea12e8dce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that compute the matrices product.  <a href="_l_u_8c.html#adbddb63c6767f77686ce076ea12e8dce">Plus de détails...</a><br /></td></tr>
+<tr class="separator:adbddb63c6767f77686ce076ea12e8dce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0567a2e7bef9961c7f776d6be796b109"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_u_8c.html#a0567a2e7bef9961c7f776d6be796b109">Identity</a> (<a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>)</td></tr>
+<tr class="memdesc:a0567a2e7bef9961c7f776d6be796b109"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that create an identity matrix.  <a href="_l_u_8c.html#a0567a2e7bef9961c7f776d6be796b109">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a0567a2e7bef9961c7f776d6be796b109"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7b1c24ed8cdbd64bf95fbc9abc587be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_u_8c.html#aa7b1c24ed8cdbd64bf95fbc9abc587be">pivot</a> (<a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> a, <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> p, <a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>)</td></tr>
+<tr class="memdesc:aa7b1c24ed8cdbd64bf95fbc9abc587be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the permutation (swapping) of rows using the pivoting process.  <a href="_l_u_8c.html#aa7b1c24ed8cdbd64bf95fbc9abc587be">Plus de détails...</a><br /></td></tr>
+<tr class="separator:aa7b1c24ed8cdbd64bf95fbc9abc587be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6308190e0aa535f55f3753b82cd587d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_u_8c.html#a6308190e0aa535f55f3753b82cd587d9">LU</a> (<a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A, <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> L, <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> U, <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> P, <a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>, <a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>)</td></tr>
+<tr class="memdesc:a6308190e0aa535f55f3753b82cd587d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the LU decomposition using the pivot function.  <a href="_l_u_8c.html#a6308190e0aa535f55f3753b82cd587d9">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a6308190e0aa535f55f3753b82cd587d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40d0bafbb8b2a663bf9158a5d51bd76b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_u_8c.html#a40d0bafbb8b2a663bf9158a5d51bd76b">correction</a> (<a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A, <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> L, <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> U, <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> P, <a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>, <a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>)</td></tr>
+<tr class="memdesc:a40d0bafbb8b2a663bf9158a5d51bd76b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the LU decomposition is correct by making the product of L and U.  <a href="_l_u_8c.html#a40d0bafbb8b2a663bf9158a5d51bd76b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a40d0bafbb8b2a663bf9158a5d51bd76b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e155a6c31b8972780e642fabd6e0715"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_l_u_8c.html#a5e155a6c31b8972780e642fabd6e0715">RunLU</a> (<a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A, <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> P, <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> L, <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> U, <a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>, <a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>)</td></tr>
+<tr class="memdesc:a5e155a6c31b8972780e642fabd6e0715"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the LU decomposition to make the main function cleaner.  <a href="_l_u_8c.html#a5e155a6c31b8972780e642fabd6e0715">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a5e155a6c31b8972780e642fabd6e0715"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p >File that compute the LU decomposition. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Amine Berbagui </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2022-05-05 </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a53421b2b361fe1ad0427fd3bc65f22c3" name="a53421b2b361fe1ad0427fd3bc65f22c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53421b2b361fe1ad0427fd3bc65f22c3">&#9670;&nbsp;</a></span>Copy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> Copy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy a matrix to a new one. </p>
+
+</div>
+</div>
+<a id="a40d0bafbb8b2a663bf9158a5d51bd76b" name="a40d0bafbb8b2a663bf9158a5d51bd76b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40d0bafbb8b2a663bf9158a5d51bd76b">&#9670;&nbsp;</a></span>correction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void correction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>U</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>P</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if the LU decomposition is correct by making the product of L and U. </p>
+
+</div>
+</div>
+<a id="ab17fcd3423f8ea0d1fe019bed426f382" name="ab17fcd3423f8ea0d1fe019bed426f382"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab17fcd3423f8ea0d1fe019bed426f382">&#9670;&nbsp;</a></span>displayMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void displayMatrix </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>title</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Display the matrix m to stdout. </p>
+
+</div>
+</div>
+<a id="a7f11018544139fb5a6fd763ee2093db3" name="a7f11018544139fb5a6fd763ee2093db3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f11018544139fb5a6fd763ee2093db3">&#9670;&nbsp;</a></span>freeMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void freeMatrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>m</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>free the matrix and all elements within it </p>
+
+</div>
+</div>
+<a id="ac9e75f650f371aba794d6e35247ba57b" name="ac9e75f650f371aba794d6e35247ba57b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9e75f650f371aba794d6e35247ba57b">&#9670;&nbsp;</a></span>generate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> generate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generate a n*n matrix of random integers number We can adjust the random range for performances mesurements. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>A : the random matrix </dd></dl>
+
+</div>
+</div>
+<a id="a0567a2e7bef9961c7f776d6be796b109" name="a0567a2e7bef9961c7f776d6be796b109"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0567a2e7bef9961c7f776d6be796b109">&#9670;&nbsp;</a></span>Identity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> Identity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function that create an identity matrix. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>res </dd></dl>
+
+</div>
+</div>
+<a id="a97c87b547be94ce5df065264e7dc01e4" name="a97c87b547be94ce5df065264e7dc01e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97c87b547be94ce5df065264e7dc01e4">&#9670;&nbsp;</a></span>init_matrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> init_matrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>allocate memory for the matrix and initialize it </p>
+<dl class="section return"><dt>Renvoie</dt><dd>m : matrix n*n initialized </dd></dl>
+
+</div>
+</div>
+<a id="ac611b92a60a8b363789e7c294febe760" name="ac611b92a60a8b363789e7c294febe760"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac611b92a60a8b363789e7c294febe760">&#9670;&nbsp;</a></span>loadMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> loadMatrix </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>load a 2D array into a new square matrix </p>
+<dl class="section return"><dt>Renvoie</dt><dd>m : the new matrix </dd></dl>
+
+</div>
+</div>
+<a id="a6308190e0aa535f55f3753b82cd587d9" name="a6308190e0aa535f55f3753b82cd587d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6308190e0aa535f55f3753b82cd587d9">&#9670;&nbsp;</a></span>LU()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LU </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>U</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>P</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute the LU decomposition using the pivot function. </p>
+
+</div>
+</div>
+<a id="adbddb63c6767f77686ce076ea12e8dce" name="adbddb63c6767f77686ce076ea12e8dce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbddb63c6767f77686ce076ea12e8dce">&#9670;&nbsp;</a></span>matmul()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> matmul </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function that compute the matrices product. </p>
+
+</div>
+</div>
+<a id="aefd56c48301285547b4bd085fb7e1b15" name="aefd56c48301285547b4bd085fb7e1b15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefd56c48301285547b4bd085fb7e1b15">&#9670;&nbsp;</a></span>null_matrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void null_matrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>initialize the square matrix to 0 </p>
+
+</div>
+</div>
+<a id="aa7b1c24ed8cdbd64bf95fbc9abc587be" name="aa7b1c24ed8cdbd64bf95fbc9abc587be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7b1c24ed8cdbd64bf95fbc9abc587be">&#9670;&nbsp;</a></span>pivot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void pivot </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute the permutation (swapping) of rows using the pivoting process. </p>
+
+</div>
+</div>
+<a id="a5e155a6c31b8972780e642fabd6e0715" name="a5e155a6c31b8972780e642fabd6e0715"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e155a6c31b8972780e642fabd6e0715">&#9670;&nbsp;</a></span>RunLU()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RunLU </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>P</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>U</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Run the LU decomposition to make the main function cleaner. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

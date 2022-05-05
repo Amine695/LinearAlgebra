@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Fondements de l&#39;algorithmique algébrique:  Fichier source de Algorithmique algébrique/Projet/algebraic-algorithmic-project/src/LU.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="polytech.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Fondements de l&#39;algorithmique algébrique<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">FLAG</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_37c06db2d04acfe4d30b0395cd83bd7c.html">Algorithmique algébrique</a></li><li class="navelem"><a class="el" href="dir_555637fee2d22d2b0161dc6808ca1524.html">Projet</a></li><li class="navelem"><a class="el" href="dir_a21f8dc8f7cad282ef35f1eaa0856255.html">algebraic-algorithmic-project</a></li><li class="navelem"><a class="el" href="dir_cdd63df80f40e74593db03ce6f4a95e2.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">LU.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_l_u_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;time.h&gt;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// some macro to go faster</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="_l_u_8h.html#ad9d94f789e9e70a39f4aa30131e57f31">    4</a></span><span class="preprocessor">#define foreach(a,b,c) for(int a = b; a&lt;c ; a++) </span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="_l_u_8h.html#a13e0d47fe437055f6e4c7e45bc58fe86">    5</a></span><span class="preprocessor">#define forneg(a,b,c) for(int a = b; a&gt;=c ; a--) </span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="_l_u_8h.html#a6d26580d2fa9d71dc69f6e4ca98826e3">    6</a></span><span class="preprocessor">#define for_(a,n) foreach(a,0,n) </span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">    8</a></span><span class="preprocessor">#define DIM int n   </span><span class="comment">// the size of the matrix</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">    9</a></span><span class="preprocessor">#define prime int p </span><span class="comment">// the prime number</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">   10</a></span><span class="keyword">typedef</span> <span class="keywordtype">int</span> **<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>; <span class="comment">// the matrix</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">// prototypes functions </span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keywordtype">void</span> <a class="code hl_function" href="_l_u_8h.html#aefd56c48301285547b4bd085fb7e1b15">null_matrix</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> m, <a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="_l_u_8h.html#ae5e917a3efcdcb3a2260db50c88ef036">   14</a></span><a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> <a class="code hl_function" href="_l_u_8h.html#ae5e917a3efcdcb3a2260db50c88ef036">init_matrix</a>(<span class="keywordtype">int</span> s);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> <a class="code hl_function" href="_l_u_8h.html#ac611b92a60a8b363789e7c294febe760">loadMatrix</a>(<span class="keywordtype">void</span> *s, <a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> <a class="code hl_function" href="_l_u_8h.html#a0567a2e7bef9961c7f776d6be796b109">Identity</a>(<a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> <a class="code hl_function" href="_l_u_8h.html#a53421b2b361fe1ad0427fd3bc65f22c3">Copy</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> m,<a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> <a class="code hl_function" href="_l_u_8h.html#ac9e75f650f371aba794d6e35247ba57b">generate</a>(<a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>,<a class="code hl_define" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordtype">void</span> <a class="code hl_function" href="_l_u_8h.html#a7f11018544139fb5a6fd763ee2093db3">freeMatrix</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> m);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keywordtype">void</span> <a class="code hl_function" href="_l_u_8h.html#ab17fcd3423f8ea0d1fe019bed426f382">displayMatrix</a>(<span class="keywordtype">char</span> title[], <a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> m,<a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="_l_u_8h.html#ae4983c9718d157a6cc970f4cf11669ef">   21</a></span><a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> <a class="code hl_function" href="_l_u_8h.html#ae4983c9718d157a6cc970f4cf11669ef">mat_mult</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> a, <a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> b, <a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>, <a class="code hl_define" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> <a class="code hl_function" href="_l_u_8h.html#adbddb63c6767f77686ce076ea12e8dce">matmul</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> a, <a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> b, <a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a> , <a class="code hl_define" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keywordtype">void</span> <a class="code hl_function" href="_l_u_8h.html#aa7b1c24ed8cdbd64bf95fbc9abc587be">pivot</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> a, <a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> p, <a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keywordtype">void</span> <a class="code hl_function" href="_l_u_8h.html#a6308190e0aa535f55f3753b82cd587d9">LU</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A, <a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> L, <a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> U, <a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> P, <a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>,<a class="code hl_define" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keywordtype">void</span> <a class="code hl_function" href="_l_u_8h.html#a40d0bafbb8b2a663bf9158a5d51bd76b">correction</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A, <a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> L, <a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> U, <a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> P, <a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>, <a class="code hl_define" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keywordtype">void</span> <a class="code hl_function" href="_l_u_8h.html#a5e155a6c31b8972780e642fabd6e0715">RunLU</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A, <a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> P, <a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> L, <a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> U, <a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>, <a class="code hl_define" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>);</div>
+<div class="ttc" id="a_l_u_8h_html_a0567a2e7bef9961c7f776d6be796b109"><div class="ttname"><a href="_l_u_8h.html#a0567a2e7bef9961c7f776d6be796b109">Identity</a></div><div class="ttdeci">matrix Identity(DIM)</div><div class="ttdoc">Function that create an identity matrix.</div><div class="ttdef"><b>Definition:</b> LU.c:145</div></div>
+<div class="ttc" id="a_l_u_8h_html_a40d0bafbb8b2a663bf9158a5d51bd76b"><div class="ttname"><a href="_l_u_8h.html#a40d0bafbb8b2a663bf9158a5d51bd76b">correction</a></div><div class="ttdeci">void correction(matrix A, matrix L, matrix U, matrix P, DIM, prime)</div><div class="ttdoc">Check if the LU decomposition is correct by making the product of L and U.</div><div class="ttdef"><b>Definition:</b> LU.c:249</div></div>
+<div class="ttc" id="a_l_u_8h_html_a53421b2b361fe1ad0427fd3bc65f22c3"><div class="ttname"><a href="_l_u_8h.html#a53421b2b361fe1ad0427fd3bc65f22c3">Copy</a></div><div class="ttdeci">matrix Copy(matrix m, DIM)</div><div class="ttdoc">Copy a matrix to a new one.</div><div class="ttdef"><b>Definition:</b> LU.c:51</div></div>
+<div class="ttc" id="a_l_u_8h_html_a5e155a6c31b8972780e642fabd6e0715"><div class="ttname"><a href="_l_u_8h.html#a5e155a6c31b8972780e642fabd6e0715">RunLU</a></div><div class="ttdeci">void RunLU(matrix A, matrix P, matrix L, matrix U, DIM, prime)</div><div class="ttdoc">Run the LU decomposition to make the main function cleaner.</div><div class="ttdef"><b>Definition:</b> LU.c:289</div></div>
+<div class="ttc" id="a_l_u_8h_html_a6308190e0aa535f55f3753b82cd587d9"><div class="ttname"><a href="_l_u_8h.html#a6308190e0aa535f55f3753b82cd587d9">LU</a></div><div class="ttdeci">void LU(matrix A, matrix L, matrix U, matrix P, DIM, prime)</div><div class="ttdoc">Compute the LU decomposition using the pivot function.</div><div class="ttdef"><b>Definition:</b> LU.c:192</div></div>
+<div class="ttc" id="a_l_u_8h_html_a76ca626f73b2f667654605edadb3f656"><div class="ttname"><a href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a></div><div class="ttdeci">int ** matrix</div><div class="ttdef"><b>Definition:</b> LU.h:10</div></div>
+<div class="ttc" id="a_l_u_8h_html_a7f11018544139fb5a6fd763ee2093db3"><div class="ttname"><a href="_l_u_8h.html#a7f11018544139fb5a6fd763ee2093db3">freeMatrix</a></div><div class="ttdeci">void freeMatrix(matrix m)</div><div class="ttdoc">free the matrix and all elements within it</div><div class="ttdef"><b>Definition:</b> LU.c:92</div></div>
+<div class="ttc" id="a_l_u_8h_html_aa7b1c24ed8cdbd64bf95fbc9abc587be"><div class="ttname"><a href="_l_u_8h.html#aa7b1c24ed8cdbd64bf95fbc9abc587be">pivot</a></div><div class="ttdeci">void pivot(matrix a, matrix p, DIM)</div><div class="ttdoc">Compute the permutation (swapping) of rows using the pivoting process.</div><div class="ttdef"><b>Definition:</b> LU.c:164</div></div>
+<div class="ttc" id="a_l_u_8h_html_ab17fcd3423f8ea0d1fe019bed426f382"><div class="ttname"><a href="_l_u_8h.html#ab17fcd3423f8ea0d1fe019bed426f382">displayMatrix</a></div><div class="ttdeci">void displayMatrix(char title[], matrix m, DIM)</div><div class="ttdoc">Display the matrix m to stdout.</div><div class="ttdef"><b>Definition:</b> LU.c:102</div></div>
+<div class="ttc" id="a_l_u_8h_html_abca7579a8bbdb7b37b9e7ddb54cbd549"><div class="ttname"><a href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a></div><div class="ttdeci">#define prime</div><div class="ttdef"><b>Definition:</b> LU.h:9</div></div>
+<div class="ttc" id="a_l_u_8h_html_ac25189db92959bff3c6c2adf4c34b50a"><div class="ttname"><a href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a></div><div class="ttdeci">#define DIM</div><div class="ttdef"><b>Definition:</b> LU.h:8</div></div>
+<div class="ttc" id="a_l_u_8h_html_ac611b92a60a8b363789e7c294febe760"><div class="ttname"><a href="_l_u_8h.html#ac611b92a60a8b363789e7c294febe760">loadMatrix</a></div><div class="ttdeci">matrix loadMatrix(void *s, DIM)</div><div class="ttdoc">load a 2D array into a new square matrix</div><div class="ttdef"><b>Definition:</b> LU.c:65</div></div>
+<div class="ttc" id="a_l_u_8h_html_ac9e75f650f371aba794d6e35247ba57b"><div class="ttname"><a href="_l_u_8h.html#ac9e75f650f371aba794d6e35247ba57b">generate</a></div><div class="ttdeci">matrix generate(DIM, prime)</div><div class="ttdoc">Generate a n*n matrix of random integers number We can adjust the random range for performances mesur...</div><div class="ttdef"><b>Definition:</b> LU.c:79</div></div>
+<div class="ttc" id="a_l_u_8h_html_adbddb63c6767f77686ce076ea12e8dce"><div class="ttname"><a href="_l_u_8h.html#adbddb63c6767f77686ce076ea12e8dce">matmul</a></div><div class="ttdeci">matrix matmul(matrix a, matrix b, DIM, prime)</div><div class="ttdoc">Function that compute the matrices product.</div><div class="ttdef"><b>Definition:</b> LU.c:119</div></div>
+<div class="ttc" id="a_l_u_8h_html_ae4983c9718d157a6cc970f4cf11669ef"><div class="ttname"><a href="_l_u_8h.html#ae4983c9718d157a6cc970f4cf11669ef">mat_mult</a></div><div class="ttdeci">matrix mat_mult(matrix a, matrix b, DIM, prime)</div></div>
+<div class="ttc" id="a_l_u_8h_html_ae5e917a3efcdcb3a2260db50c88ef036"><div class="ttname"><a href="_l_u_8h.html#ae5e917a3efcdcb3a2260db50c88ef036">init_matrix</a></div><div class="ttdeci">matrix init_matrix(int s)</div></div>
+<div class="ttc" id="a_l_u_8h_html_aefd56c48301285547b4bd085fb7e1b15"><div class="ttname"><a href="_l_u_8h.html#aefd56c48301285547b4bd085fb7e1b15">null_matrix</a></div><div class="ttdeci">void null_matrix(matrix m, DIM)</div><div class="ttdoc">initialize the square matrix to 0</div><div class="ttdef"><b>Definition:</b> LU.c:23</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

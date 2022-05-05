@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Fondements de l&#39;algorithmique algébrique:  Fichier source de Algorithmique algébrique/Projet/algebraic-algorithmic-project/src/MatrixInv.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="polytech.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Fondements de l&#39;algorithmique algébrique<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">FLAG</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_37c06db2d04acfe4d30b0395cd83bd7c.html">Algorithmique algébrique</a></li><li class="navelem"><a class="el" href="dir_555637fee2d22d2b0161dc6808ca1524.html">Projet</a></li><li class="navelem"><a class="el" href="dir_a21f8dc8f7cad282ef35f1eaa0856255.html">algebraic-algorithmic-project</a></li><li class="navelem"><a class="el" href="dir_cdd63df80f40e74593db03ce6f4a95e2.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">MatrixInv.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_matrix_inv_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="_l_u_8h.html">LU.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keywordtype">int</span> <a class="code hl_function" href="_matrix_inv_8h.html#a6491790dba4fe689af5788e33b0ede82">computeZ</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> L, <a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> I,<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> Z,<span class="keywordtype">int</span> col, <span class="keywordtype">int</span> row,<a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>,<a class="code hl_define" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>);</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keywordtype">int</span> <a class="code hl_function" href="_matrix_inv_8h.html#a115da520e9dd2dcd7cdd19f3c3452bd7">computeInverse</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> inverse, <a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> U,<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> Z, <span class="keywordtype">int</span> col, <span class="keywordtype">int</span> row, <a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>,<a class="code hl_define" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>);</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> <a class="code hl_function" href="_matrix_inv_8h.html#a71249150c92d65dc4eea4eca26260a2a">InverseMatrix</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> I,<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> L, <a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> U,<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> P, <a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> Z, <a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>,<a class="code hl_define" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>);</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keywordtype">void</span> <a class="code hl_function" href="_matrix_inv_8h.html#a8d70aa81dff695ccc46b04959b678e7c">correctionInv</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A, <a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> s, <a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>, <a class="code hl_define" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>);</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keywordtype">void</span> <a class="code hl_function" href="_matrix_inv_8h.html#a7879566acf1b871f93ebdad4a9cdc94a">RunNaiveInverse</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A,<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> L,<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> U,<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> P,<a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>,<a class="code hl_define" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>);</div>
+<div class="ttc" id="a_l_u_8h_html"><div class="ttname"><a href="_l_u_8h.html">LU.h</a></div></div>
+<div class="ttc" id="a_l_u_8h_html_a76ca626f73b2f667654605edadb3f656"><div class="ttname"><a href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a></div><div class="ttdeci">int ** matrix</div><div class="ttdef"><b>Definition:</b> LU.h:10</div></div>
+<div class="ttc" id="a_l_u_8h_html_abca7579a8bbdb7b37b9e7ddb54cbd549"><div class="ttname"><a href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a></div><div class="ttdeci">#define prime</div><div class="ttdef"><b>Definition:</b> LU.h:9</div></div>
+<div class="ttc" id="a_l_u_8h_html_ac25189db92959bff3c6c2adf4c34b50a"><div class="ttname"><a href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a></div><div class="ttdeci">#define DIM</div><div class="ttdef"><b>Definition:</b> LU.h:8</div></div>
+<div class="ttc" id="a_matrix_inv_8h_html_a115da520e9dd2dcd7cdd19f3c3452bd7"><div class="ttname"><a href="_matrix_inv_8h.html#a115da520e9dd2dcd7cdd19f3c3452bd7">computeInverse</a></div><div class="ttdeci">int computeInverse(matrix inverse, matrix U, matrix Z, int col, int row, DIM, prime)</div><div class="ttdoc">Function that compute the inverse matrix.</div><div class="ttdef"><b>Definition:</b> MatrixInv.c:40</div></div>
+<div class="ttc" id="a_matrix_inv_8h_html_a6491790dba4fe689af5788e33b0ede82"><div class="ttname"><a href="_matrix_inv_8h.html#a6491790dba4fe689af5788e33b0ede82">computeZ</a></div><div class="ttdeci">int computeZ(matrix L, matrix I, matrix Z, int col, int row, DIM, prime)</div><div class="ttdoc">Function that compute the Z matrix for each row of the matrix.</div><div class="ttdef"><b>Definition:</b> MatrixInv.c:21</div></div>
+<div class="ttc" id="a_matrix_inv_8h_html_a71249150c92d65dc4eea4eca26260a2a"><div class="ttname"><a href="_matrix_inv_8h.html#a71249150c92d65dc4eea4eca26260a2a">InverseMatrix</a></div><div class="ttdeci">matrix InverseMatrix(matrix I, matrix L, matrix U, matrix P, matrix Z, DIM, prime)</div><div class="ttdoc">Function in which we call the two functions above to build the Z vector and the inverse matrix.</div><div class="ttdef"><b>Definition:</b> MatrixInv.c:59</div></div>
+<div class="ttc" id="a_matrix_inv_8h_html_a7879566acf1b871f93ebdad4a9cdc94a"><div class="ttname"><a href="_matrix_inv_8h.html#a7879566acf1b871f93ebdad4a9cdc94a">RunNaiveInverse</a></div><div class="ttdeci">void RunNaiveInverse(matrix A, matrix L, matrix U, matrix P, DIM, prime)</div><div class="ttdoc">Function that launch the Naive Inverse called in the main.</div><div class="ttdef"><b>Definition:</b> MatrixInv.c:126</div></div>
+<div class="ttc" id="a_matrix_inv_8h_html_a8d70aa81dff695ccc46b04959b678e7c"><div class="ttname"><a href="_matrix_inv_8h.html#a8d70aa81dff695ccc46b04959b678e7c">correctionInv</a></div><div class="ttdeci">void correctionInv(matrix A, matrix s, DIM, prime)</div><div class="ttdoc">Check if A.A^-1 = Identity matrix.</div><div class="ttdef"><b>Definition:</b> MatrixInv.c:85</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Fondements de l&#39;algorithmique algébrique:  Fichier source de Algorithmique algébrique/Projet/algebraic-algorithmic-project/src/Benchmarks.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="polytech.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Fondements de l&#39;algorithmique algébrique<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">FLAG</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_37c06db2d04acfe4d30b0395cd83bd7c.html">Algorithmique algébrique</a></li><li class="navelem"><a class="el" href="dir_555637fee2d22d2b0161dc6808ca1524.html">Projet</a></li><li class="navelem"><a class="el" href="dir_a21f8dc8f7cad282ef35f1eaa0856255.html">algebraic-algorithmic-project</a></li><li class="navelem"><a class="el" href="dir_cdd63df80f40e74593db03ce6f4a95e2.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Benchmarks.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_benchmarks_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="_l_u_8h.html">LU.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="_tools_8h.html">Tools.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keywordtype">void</span> <a class="code hl_function" href="_benchmarks_8h.html#a8012117b1fbce04b78066d4705cf3edf">BenchmarkNaiveInverse</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A,<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> L,<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> U,<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> P,<a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>,<a class="code hl_define" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>, FILE *fp);</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keywordtype">void</span> <a class="code hl_function" href="_benchmarks_8h.html#a5ae328ec438e57d55446d33202b490b3">BenchmarkStrassenInv</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A,<a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>,<a class="code hl_define" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>, FILE *fp);</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keywordtype">void</span> <a class="code hl_function" href="_benchmarks_8h.html#a44ef10bb0683fdb420bd8ab1f478bee3">BenchmarksNaiveMul</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A,<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> B,<a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>,<a class="code hl_define" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>, FILE *fp);</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keywordtype">void</span> <a class="code hl_function" href="_benchmarks_8h.html#ab0634c2dccae5740321fd96a122f6310">BenchmarkStrassenMult</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A, <a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> B, <a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>, <a class="code hl_define" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>, FILE *fp);</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keywordtype">void</span> <a class="code hl_function" href="_benchmarks_8h.html#acfc6b6fdbb493f14407e20097d492ff6">BenchmarkStrassenInvAndMult</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A, <a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>, <a class="code hl_define" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>, FILE *fp);</div>
+<div class="ttc" id="a_benchmarks_8h_html_a44ef10bb0683fdb420bd8ab1f478bee3"><div class="ttname"><a href="_benchmarks_8h.html#a44ef10bb0683fdb420bd8ab1f478bee3">BenchmarksNaiveMul</a></div><div class="ttdeci">void BenchmarksNaiveMul(matrix A, matrix B, DIM, prime, FILE *fp)</div><div class="ttdoc">Launch the benchmarks for the Naive multiplication matrix.</div><div class="ttdef"><b>Definition:</b> Benchmarks.c:61</div></div>
+<div class="ttc" id="a_benchmarks_8h_html_a5ae328ec438e57d55446d33202b490b3"><div class="ttname"><a href="_benchmarks_8h.html#a5ae328ec438e57d55446d33202b490b3">BenchmarkStrassenInv</a></div><div class="ttdeci">void BenchmarkStrassenInv(matrix A, DIM, prime, FILE *fp)</div><div class="ttdoc">Launch the benchmarks for the Strassen's Inversion matrix.</div><div class="ttdef"><b>Definition:</b> Benchmarks.c:43</div></div>
+<div class="ttc" id="a_benchmarks_8h_html_a8012117b1fbce04b78066d4705cf3edf"><div class="ttname"><a href="_benchmarks_8h.html#a8012117b1fbce04b78066d4705cf3edf">BenchmarkNaiveInverse</a></div><div class="ttdeci">void BenchmarkNaiveInverse(matrix A, matrix L, matrix U, matrix P, DIM, prime, FILE *fp)</div><div class="ttdoc">Launch the benchmarks for the Naive Inversion matrix.</div><div class="ttdef"><b>Definition:</b> Benchmarks.c:20</div></div>
+<div class="ttc" id="a_benchmarks_8h_html_ab0634c2dccae5740321fd96a122f6310"><div class="ttname"><a href="_benchmarks_8h.html#ab0634c2dccae5740321fd96a122f6310">BenchmarkStrassenMult</a></div><div class="ttdeci">void BenchmarkStrassenMult(matrix A, matrix B, DIM, prime, FILE *fp)</div><div class="ttdoc">Launch the benchmarks for the Strassen's multiplication matrix.</div><div class="ttdef"><b>Definition:</b> Benchmarks.c:78</div></div>
+<div class="ttc" id="a_benchmarks_8h_html_acfc6b6fdbb493f14407e20097d492ff6"><div class="ttname"><a href="_benchmarks_8h.html#acfc6b6fdbb493f14407e20097d492ff6">BenchmarkStrassenInvAndMult</a></div><div class="ttdeci">void BenchmarkStrassenInvAndMult(matrix A, DIM, prime, FILE *fp)</div><div class="ttdoc">Launch the benchmarks for the Strassen's inversion matrix using strassen's multiplication algorithm u...</div><div class="ttdef"><b>Definition:</b> Benchmarks.c:97</div></div>
+<div class="ttc" id="a_l_u_8h_html"><div class="ttname"><a href="_l_u_8h.html">LU.h</a></div></div>
+<div class="ttc" id="a_l_u_8h_html_a76ca626f73b2f667654605edadb3f656"><div class="ttname"><a href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a></div><div class="ttdeci">int ** matrix</div><div class="ttdef"><b>Definition:</b> LU.h:10</div></div>
+<div class="ttc" id="a_l_u_8h_html_abca7579a8bbdb7b37b9e7ddb54cbd549"><div class="ttname"><a href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a></div><div class="ttdeci">#define prime</div><div class="ttdef"><b>Definition:</b> LU.h:9</div></div>
+<div class="ttc" id="a_l_u_8h_html_ac25189db92959bff3c6c2adf4c34b50a"><div class="ttname"><a href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a></div><div class="ttdeci">#define DIM</div><div class="ttdef"><b>Definition:</b> LU.h:8</div></div>
+<div class="ttc" id="a_tools_8h_html"><div class="ttname"><a href="_tools_8h.html">Tools.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

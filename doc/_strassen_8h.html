@@ -1,0 +1,625 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Fondements de l&#39;algorithmique algébrique: Référence du fichier Algorithmique algébrique/Projet/algebraic-algorithmic-project/src/Strassen.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="polytech.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Fondements de l&#39;algorithmique algébrique<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">FLAG</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_37c06db2d04acfe4d30b0395cd83bd7c.html">Algorithmique algébrique</a></li><li class="navelem"><a class="el" href="dir_555637fee2d22d2b0161dc6808ca1524.html">Projet</a></li><li class="navelem"><a class="el" href="dir_a21f8dc8f7cad282ef35f1eaa0856255.html">algebraic-algorithmic-project</a></li><li class="navelem"><a class="el" href="dir_cdd63df80f40e74593db03ce6f4a95e2.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier Strassen.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_l_u_8h_source.html">LU.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_tools_8h_source.html">Tools.h</a>&quot;</code><br />
+</div>
+<p><a href="_strassen_8h_source.html">Aller au code source de ce fichier.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a146c328a1e816ac1082c4994b73f673e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_strassen_8h.html#a146c328a1e816ac1082c4994b73f673e">SubstractMatrix</a> (<a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A, <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> B, <a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>, <a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>)</td></tr>
+<tr class="memdesc:a146c328a1e816ac1082c4994b73f673e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Substract two matrices.  <a href="_strassen_8h.html#a146c328a1e816ac1082c4994b73f673e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a146c328a1e816ac1082c4994b73f673e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a820607b56134d9de0b23d98d12224b60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_strassen_8h.html#a820607b56134d9de0b23d98d12224b60">ChangeSign</a> (<a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A, <a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>, <a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>)</td></tr>
+<tr class="memdesc:a820607b56134d9de0b23d98d12224b60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the sign of the matrix.  <a href="_strassen_8h.html#a820607b56134d9de0b23d98d12224b60">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a820607b56134d9de0b23d98d12224b60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45b80bb2f88902f3bc7852e0d5dda51f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_strassen_8h.html#a45b80bb2f88902f3bc7852e0d5dda51f">AddMatrix</a> (<a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A, <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> B, <a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>, <a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>)</td></tr>
+<tr class="memdesc:a45b80bb2f88902f3bc7852e0d5dda51f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add two matrices.  <a href="_strassen_8h.html#a45b80bb2f88902f3bc7852e0d5dda51f">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a45b80bb2f88902f3bc7852e0d5dda51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53421b2b361fe1ad0427fd3bc65f22c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_strassen_8h.html#a53421b2b361fe1ad0427fd3bc65f22c3">Copy</a> (<a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> m, <a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>)</td></tr>
+<tr class="memdesc:a53421b2b361fe1ad0427fd3bc65f22c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a matrix to a new one.  <a href="_strassen_8h.html#a53421b2b361fe1ad0427fd3bc65f22c3">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a53421b2b361fe1ad0427fd3bc65f22c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a672d032da4b6c620cea503fe809b9f86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_strassen_8h.html#a672d032da4b6c620cea503fe809b9f86">SubMatrix</a> (<a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A, <a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>, int d)</td></tr>
+<tr class="memdesc:a672d032da4b6c620cea503fe809b9f86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decompose the matrix in sub-matrix.  <a href="_strassen_8h.html#a672d032da4b6c620cea503fe809b9f86">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a672d032da4b6c620cea503fe809b9f86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a554aba8611114e33e33977e667c6781b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_strassen_8h.html#a554aba8611114e33e33977e667c6781b">assembly</a> (<a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A11, <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A12, <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A21, <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A22, <a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>)</td></tr>
+<tr class="memdesc:a554aba8611114e33e33977e667c6781b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build the matrix A from its sub-matrices.  <a href="_strassen_8h.html#a554aba8611114e33e33977e667c6781b">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a554aba8611114e33e33977e667c6781b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e9760735de9601914b23251caf341fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_strassen_8h.html#a9e9760735de9601914b23251caf341fe">InvStrassen</a> (<a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A, <a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>, <a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>)</td></tr>
+<tr class="memdesc:a9e9760735de9601914b23251caf341fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the Strassen's inversion algorithm.  <a href="_strassen_8h.html#a9e9760735de9601914b23251caf341fe">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a9e9760735de9601914b23251caf341fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a710bcbd0cf2ae2f6e07c52b5f956e8b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_strassen_8h.html#a710bcbd0cf2ae2f6e07c52b5f956e8b6">StrassenMult</a> (<a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A, <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> B, <a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>, <a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>)</td></tr>
+<tr class="memdesc:a710bcbd0cf2ae2f6e07c52b5f956e8b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the Strassen's multiplication algorithm.  <a href="_strassen_8h.html#a710bcbd0cf2ae2f6e07c52b5f956e8b6">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a710bcbd0cf2ae2f6e07c52b5f956e8b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8ec494f305be472206501d57ea08700"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_strassen_8h.html#ab8ec494f305be472206501d57ea08700">InvStrassenMultStrassen</a> (<a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A, <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> I, <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> L, <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> U, <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> P, <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> Z, <a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>, <a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>)</td></tr>
+<tr class="memdesc:ab8ec494f305be472206501d57ea08700"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the Strassen's inversion algorithm with the Strassen's multiplication algorithm.  <a href="_strassen_8h.html#ab8ec494f305be472206501d57ea08700">Plus de détails...</a><br /></td></tr>
+<tr class="separator:ab8ec494f305be472206501d57ea08700"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3156cba5bad08ac0f83b72632d11078e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_strassen_8h.html#a3156cba5bad08ac0f83b72632d11078e">displayStrassen</a> (char title[], <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> m, <a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>)</td></tr>
+<tr class="memdesc:a3156cba5bad08ac0f83b72632d11078e"><td class="mdescLeft">&#160;</td><td class="mdescRight">print the matrix to stdout  <a href="_strassen_8h.html#a3156cba5bad08ac0f83b72632d11078e">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a3156cba5bad08ac0f83b72632d11078e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65af81c037be662b6e35734444da05ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_strassen_8h.html#a65af81c037be662b6e35734444da05ec">RunStrassenInv</a> (<a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A, <a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>, <a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>)</td></tr>
+<tr class="memdesc:a65af81c037be662b6e35734444da05ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the Strassen's inverse algorithm, not for benchmarks.  <a href="_strassen_8h.html#a65af81c037be662b6e35734444da05ec">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a65af81c037be662b6e35734444da05ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34242860ac95042918ddddd7f8792adc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_strassen_8h.html#a34242860ac95042918ddddd7f8792adc">RunStrassenMult</a> (<a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A, <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> B, <a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>, <a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>)</td></tr>
+<tr class="memdesc:a34242860ac95042918ddddd7f8792adc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the Strassen's multiplication algorithm, not for benchmarks.  <a href="_strassen_8h.html#a34242860ac95042918ddddd7f8792adc">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a34242860ac95042918ddddd7f8792adc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a45b80bb2f88902f3bc7852e0d5dda51f" name="a45b80bb2f88902f3bc7852e0d5dda51f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45b80bb2f88902f3bc7852e0d5dda51f">&#9670;&nbsp;</a></span>AddMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> AddMatrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add two matrices. </p>
+
+</div>
+</div>
+<a id="a554aba8611114e33e33977e667c6781b" name="a554aba8611114e33e33977e667c6781b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a554aba8611114e33e33977e667c6781b">&#9670;&nbsp;</a></span>assembly()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> assembly </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>A11</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>A12</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>A21</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>A22</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Build the matrix A from its sub-matrices. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>res the complete matrix </dd></dl>
+
+</div>
+</div>
+<a id="a820607b56134d9de0b23d98d12224b60" name="a820607b56134d9de0b23d98d12224b60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a820607b56134d9de0b23d98d12224b60">&#9670;&nbsp;</a></span>ChangeSign()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> ChangeSign </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Change the sign of the matrix. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>res : the matrix of opposite sign </dd></dl>
+
+</div>
+</div>
+<a id="a53421b2b361fe1ad0427fd3bc65f22c3" name="a53421b2b361fe1ad0427fd3bc65f22c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53421b2b361fe1ad0427fd3bc65f22c3">&#9670;&nbsp;</a></span>Copy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> Copy </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy a matrix to a new one. </p>
+
+</div>
+</div>
+<a id="a3156cba5bad08ac0f83b72632d11078e" name="a3156cba5bad08ac0f83b72632d11078e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3156cba5bad08ac0f83b72632d11078e">&#9670;&nbsp;</a></span>displayStrassen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void displayStrassen </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>title</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>m</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>print the matrix to stdout </p>
+
+</div>
+</div>
+<a id="a9e9760735de9601914b23251caf341fe" name="a9e9760735de9601914b23251caf341fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e9760735de9601914b23251caf341fe">&#9670;&nbsp;</a></span>InvStrassen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> InvStrassen </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute the Strassen's inversion algorithm. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>res the Inverse of A </dd></dl>
+
+</div>
+</div>
+<a id="ab8ec494f305be472206501d57ea08700" name="ab8ec494f305be472206501d57ea08700"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8ec494f305be472206501d57ea08700">&#9670;&nbsp;</a></span>InvStrassenMultStrassen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> InvStrassenMultStrassen </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>I</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>U</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>P</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>Z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute the Strassen's inversion algorithm with the Strassen's multiplication algorithm. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>res the Inverse of A </dd></dl>
+
+</div>
+</div>
+<a id="a65af81c037be662b6e35734444da05ec" name="a65af81c037be662b6e35734444da05ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65af81c037be662b6e35734444da05ec">&#9670;&nbsp;</a></span>RunStrassenInv()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RunStrassenInv </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Run the Strassen's inverse algorithm, not for benchmarks. </p>
+
+</div>
+</div>
+<a id="a34242860ac95042918ddddd7f8792adc" name="a34242860ac95042918ddddd7f8792adc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34242860ac95042918ddddd7f8792adc">&#9670;&nbsp;</a></span>RunStrassenMult()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RunStrassenMult </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Run the Strassen's multiplication algorithm, not for benchmarks. </p>
+
+</div>
+</div>
+<a id="a710bcbd0cf2ae2f6e07c52b5f956e8b6" name="a710bcbd0cf2ae2f6e07c52b5f956e8b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a710bcbd0cf2ae2f6e07c52b5f956e8b6">&#9670;&nbsp;</a></span>StrassenMult()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> StrassenMult </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute the Strassen's multiplication algorithm. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>res the result of the product of A and B </dd></dl>
+
+</div>
+</div>
+<a id="a672d032da4b6c620cea503fe809b9f86" name="a672d032da4b6c620cea503fe809b9f86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a672d032da4b6c620cea503fe809b9f86">&#9670;&nbsp;</a></span>SubMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> SubMatrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>d</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decompose the matrix in sub-matrix. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>res the sub-matrix </dd></dl>
+
+</div>
+</div>
+<a id="a146c328a1e816ac1082c4994b73f673e" name="a146c328a1e816ac1082c4994b73f673e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a146c328a1e816ac1082c4994b73f673e">&#9670;&nbsp;</a></span>SubstractMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> SubstractMatrix </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>B</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Substract two matrices. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

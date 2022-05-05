@@ -1,0 +1,413 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Fondements de l&#39;algorithmique algébrique: Référence du fichier Algorithmique algébrique/Projet/algebraic-algorithmic-project/src/LinearSystem.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="polytech.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Fondements de l&#39;algorithmique algébrique<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">FLAG</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_37c06db2d04acfe4d30b0395cd83bd7c.html">Algorithmique algébrique</a></li><li class="navelem"><a class="el" href="dir_555637fee2d22d2b0161dc6808ca1524.html">Projet</a></li><li class="navelem"><a class="el" href="dir_a21f8dc8f7cad282ef35f1eaa0856255.html">algebraic-algorithmic-project</a></li><li class="navelem"><a class="el" href="dir_cdd63df80f40e74593db03ce6f4a95e2.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Fonctions</a>  </div>
+  <div class="headertitle"><div class="title">Référence du fichier LinearSystem.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>file that solve a linear system using the LU decomposition AX = B.  
+<a href="#details">Plus de détails...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_linear_system_8h_source.html">LinearSystem.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_tools_8h_source.html">Tools.h</a>&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Fonctions</h2></td></tr>
+<tr class="memitem:a27b82c55bc3950435c304787080d82f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_linear_system_8c.html#a27b82c55bc3950435c304787080d82f4">LinearSystem</a> (<a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> L, <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> U, int Z[], int B[], int X[], <a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>, <a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>)</td></tr>
+<tr class="memdesc:a27b82c55bc3950435c304787080d82f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Step 1: Solve LZ = B for Z Step 2: Solve UX = Z for X Step 3: Check.  <a href="_linear_system_8c.html#a27b82c55bc3950435c304787080d82f4">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a27b82c55bc3950435c304787080d82f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4648822ad6541694161e70b6de5fac92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_linear_system_8c.html#a4648822ad6541694161e70b6de5fac92">generateSolution</a> (int sol[], <a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>, <a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>)</td></tr>
+<tr class="memdesc:a4648822ad6541694161e70b6de5fac92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that generates a vector of size n with random values between 0 and p-1.  <a href="_linear_system_8c.html#a4648822ad6541694161e70b6de5fac92">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4648822ad6541694161e70b6de5fac92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a3ae0eeae1194a55ede0cbaeeb059e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_linear_system_8c.html#a4a3ae0eeae1194a55ede0cbaeeb059e3">InitVector</a> (int Z[], int X[], <a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>)</td></tr>
+<tr class="memdesc:a4a3ae0eeae1194a55ede0cbaeeb059e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that initialize the Z and X vectors to 0.  <a href="_linear_system_8c.html#a4a3ae0eeae1194a55ede0cbaeeb059e3">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a4a3ae0eeae1194a55ede0cbaeeb059e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af131164f23dfabfcdc2b06d09fe23fe2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_linear_system_8c.html#af131164f23dfabfcdc2b06d09fe23fe2">DisplaySolutions</a> (int B[], int X[], int Z[], <a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>)</td></tr>
+<tr class="memdesc:af131164f23dfabfcdc2b06d09fe23fe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display the X and Z vectors, with X the solutions of the linear system.  <a href="_linear_system_8c.html#af131164f23dfabfcdc2b06d09fe23fe2">Plus de détails...</a><br /></td></tr>
+<tr class="separator:af131164f23dfabfcdc2b06d09fe23fe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62f36c5a6f226f07a2999ada61c32955"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_linear_system_8c.html#a62f36c5a6f226f07a2999ada61c32955">correctionLS</a> (<a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> L, <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> U, int Z[], int B[], int X[], <a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>, <a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>)</td></tr>
+<tr class="memdesc:a62f36c5a6f226f07a2999ada61c32955"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function verifying that we have the equality PA = LU.  <a href="_linear_system_8c.html#a62f36c5a6f226f07a2999ada61c32955">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a62f36c5a6f226f07a2999ada61c32955"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99b0a61c9c0eb5e0510ed471f27a605d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_linear_system_8c.html#a99b0a61c9c0eb5e0510ed471f27a605d">RunLS</a> (<a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> L, <a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> U, int B[], int Z[], int X[], <a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>, <a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>)</td></tr>
+<tr class="memdesc:a99b0a61c9c0eb5e0510ed471f27a605d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that run the linear system solving from main.  <a href="_linear_system_8c.html#a99b0a61c9c0eb5e0510ed471f27a605d">Plus de détails...</a><br /></td></tr>
+<tr class="separator:a99b0a61c9c0eb5e0510ed471f27a605d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
+<div class="textblock"><p >file that solve a linear system using the LU decomposition AX = B. </p>
+<dl class="section author"><dt>Auteur</dt><dd>Amine Berbagui </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2022-05-05 </dd></dl>
+<dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2022 </dd></dl>
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a id="a62f36c5a6f226f07a2999ada61c32955" name="a62f36c5a6f226f07a2999ada61c32955"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62f36c5a6f226f07a2999ada61c32955">&#9670;&nbsp;</a></span>correctionLS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void correctionLS </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>U</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Z</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>B</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>X</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function verifying that we have the equality PA = LU. </p>
+
+</div>
+</div>
+<a id="af131164f23dfabfcdc2b06d09fe23fe2" name="af131164f23dfabfcdc2b06d09fe23fe2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af131164f23dfabfcdc2b06d09fe23fe2">&#9670;&nbsp;</a></span>DisplaySolutions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DisplaySolutions </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>B</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>X</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Z</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Display the X and Z vectors, with X the solutions of the linear system. </p>
+
+</div>
+</div>
+<a id="a4648822ad6541694161e70b6de5fac92" name="a4648822ad6541694161e70b6de5fac92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4648822ad6541694161e70b6de5fac92">&#9670;&nbsp;</a></span>generateSolution()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void generateSolution </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>sol</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function that generates a vector of size n with random values between 0 and p-1. </p>
+
+</div>
+</div>
+<a id="a4a3ae0eeae1194a55ede0cbaeeb059e3" name="a4a3ae0eeae1194a55ede0cbaeeb059e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a3ae0eeae1194a55ede0cbaeeb059e3">&#9670;&nbsp;</a></span>InitVector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InitVector </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Z</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>X</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function that initialize the Z and X vectors to 0. </p>
+
+</div>
+</div>
+<a id="a27b82c55bc3950435c304787080d82f4" name="a27b82c55bc3950435c304787080d82f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27b82c55bc3950435c304787080d82f4">&#9670;&nbsp;</a></span>LinearSystem()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LinearSystem </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>U</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Z</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>B</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>X</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Step 1: Solve LZ = B for Z Step 2: Solve UX = Z for X Step 3: Check. </p>
+<p >Compute the B matrix and Z matrix using forward and backward permutations. </p>
+
+</div>
+</div>
+<a id="a99b0a61c9c0eb5e0510ed471f27a605d" name="a99b0a61c9c0eb5e0510ed471f27a605d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99b0a61c9c0eb5e0510ed471f27a605d">&#9670;&nbsp;</a></span>RunLS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RunLS </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>L</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a>&#160;</td>
+          <td class="paramname"><em>U</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>B</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Z</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>X</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function that run the linear system solving from main. </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

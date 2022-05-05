@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Fondements de l&#39;algorithmique algébrique:  Fichier source de Algorithmique algébrique/Projet/algebraic-algorithmic-project/src/Strassen.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="polytech.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Fondements de l&#39;algorithmique algébrique<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">FLAG</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Recherche','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_37c06db2d04acfe4d30b0395cd83bd7c.html">Algorithmique algébrique</a></li><li class="navelem"><a class="el" href="dir_555637fee2d22d2b0161dc6808ca1524.html">Projet</a></li><li class="navelem"><a class="el" href="dir_a21f8dc8f7cad282ef35f1eaa0856255.html">algebraic-algorithmic-project</a></li><li class="navelem"><a class="el" href="dir_cdd63df80f40e74593db03ce6f4a95e2.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Strassen.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_strassen_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="_l_u_8h.html">LU.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="_tools_8h.html">Tools.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> <a class="code hl_function" href="_strassen_8h.html#a146c328a1e816ac1082c4994b73f673e">SubstractMatrix</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A, <a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> B, <a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>,<a class="code hl_define" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>);</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> <a class="code hl_function" href="_strassen_8h.html#a820607b56134d9de0b23d98d12224b60">ChangeSign</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A,<a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>,<a class="code hl_define" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>);</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> <a class="code hl_function" href="_strassen_8h.html#a45b80bb2f88902f3bc7852e0d5dda51f">AddMatrix</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A, <a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> B,<a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>,<a class="code hl_define" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>);</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> <a class="code hl_function" href="_strassen_8h.html#a53421b2b361fe1ad0427fd3bc65f22c3">Copy</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> m,<a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>);</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> <a class="code hl_function" href="_strassen_8h.html#a672d032da4b6c620cea503fe809b9f86">SubMatrix</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A,<a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>,<span class="keywordtype">int</span> d);</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> <a class="code hl_function" href="_strassen_8h.html#a554aba8611114e33e33977e667c6781b">assembly</a>( <a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A11, <a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A12, <a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A21, <a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A22,<a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>);</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> <a class="code hl_function" href="_strassen_8h.html#a9e9760735de9601914b23251caf341fe">InvStrassen</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A,<a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>,<a class="code hl_define" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>);</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> <a class="code hl_function" href="_strassen_8h.html#a710bcbd0cf2ae2f6e07c52b5f956e8b6">StrassenMult</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A, <a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> B, <a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>,<a class="code hl_define" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> <a class="code hl_function" href="_strassen_8h.html#ab8ec494f305be472206501d57ea08700">InvStrassenMultStrassen</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A,<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> I,<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> L,<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> U,<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> P,<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> Z,<a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>,<a class="code hl_define" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>);</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keywordtype">void</span> <a class="code hl_function" href="_strassen_8h.html#a3156cba5bad08ac0f83b72632d11078e">displayStrassen</a>(<span class="keywordtype">char</span> title[], <a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> m,<a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keywordtype">void</span> <a class="code hl_function" href="_strassen_8h.html#a65af81c037be662b6e35734444da05ec">RunStrassenInv</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A,<a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>,<a class="code hl_define" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keywordtype">void</span> <a class="code hl_function" href="_strassen_8h.html#a34242860ac95042918ddddd7f8792adc">RunStrassenMult</a>(<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> A,<a class="code hl_typedef" href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a> B,<a class="code hl_define" href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a>,<a class="code hl_define" href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a>);</div>
+<div class="ttc" id="a_l_u_8h_html"><div class="ttname"><a href="_l_u_8h.html">LU.h</a></div></div>
+<div class="ttc" id="a_l_u_8h_html_a76ca626f73b2f667654605edadb3f656"><div class="ttname"><a href="_l_u_8h.html#a76ca626f73b2f667654605edadb3f656">matrix</a></div><div class="ttdeci">int ** matrix</div><div class="ttdef"><b>Definition:</b> LU.h:10</div></div>
+<div class="ttc" id="a_l_u_8h_html_abca7579a8bbdb7b37b9e7ddb54cbd549"><div class="ttname"><a href="_l_u_8h.html#abca7579a8bbdb7b37b9e7ddb54cbd549">prime</a></div><div class="ttdeci">#define prime</div><div class="ttdef"><b>Definition:</b> LU.h:9</div></div>
+<div class="ttc" id="a_l_u_8h_html_ac25189db92959bff3c6c2adf4c34b50a"><div class="ttname"><a href="_l_u_8h.html#ac25189db92959bff3c6c2adf4c34b50a">DIM</a></div><div class="ttdeci">#define DIM</div><div class="ttdef"><b>Definition:</b> LU.h:8</div></div>
+<div class="ttc" id="a_strassen_8h_html_a146c328a1e816ac1082c4994b73f673e"><div class="ttname"><a href="_strassen_8h.html#a146c328a1e816ac1082c4994b73f673e">SubstractMatrix</a></div><div class="ttdeci">matrix SubstractMatrix(matrix A, matrix B, DIM, prime)</div><div class="ttdoc">Substract two matrices.</div><div class="ttdef"><b>Definition:</b> Strassen.c:23</div></div>
+<div class="ttc" id="a_strassen_8h_html_a3156cba5bad08ac0f83b72632d11078e"><div class="ttname"><a href="_strassen_8h.html#a3156cba5bad08ac0f83b72632d11078e">displayStrassen</a></div><div class="ttdeci">void displayStrassen(char title[], matrix m, DIM)</div><div class="ttdoc">print the matrix to stdout</div><div class="ttdef"><b>Definition:</b> Strassen.c:160</div></div>
+<div class="ttc" id="a_strassen_8h_html_a34242860ac95042918ddddd7f8792adc"><div class="ttname"><a href="_strassen_8h.html#a34242860ac95042918ddddd7f8792adc">RunStrassenMult</a></div><div class="ttdeci">void RunStrassenMult(matrix A, matrix B, DIM, prime)</div><div class="ttdoc">Run the Strassen's multiplication algorithm, not for benchmarks.</div><div class="ttdef"><b>Definition:</b> Strassen.c:400</div></div>
+<div class="ttc" id="a_strassen_8h_html_a45b80bb2f88902f3bc7852e0d5dda51f"><div class="ttname"><a href="_strassen_8h.html#a45b80bb2f88902f3bc7852e0d5dda51f">AddMatrix</a></div><div class="ttdeci">matrix AddMatrix(matrix A, matrix B, DIM, prime)</div><div class="ttdoc">Add two matrices.</div><div class="ttdef"><b>Definition:</b> Strassen.c:42</div></div>
+<div class="ttc" id="a_strassen_8h_html_a53421b2b361fe1ad0427fd3bc65f22c3"><div class="ttname"><a href="_strassen_8h.html#a53421b2b361fe1ad0427fd3bc65f22c3">Copy</a></div><div class="ttdeci">matrix Copy(matrix m, DIM)</div><div class="ttdoc">Copy a matrix to a new one.</div><div class="ttdef"><b>Definition:</b> LU.c:51</div></div>
+<div class="ttc" id="a_strassen_8h_html_a554aba8611114e33e33977e667c6781b"><div class="ttname"><a href="_strassen_8h.html#a554aba8611114e33e33977e667c6781b">assembly</a></div><div class="ttdeci">matrix assembly(matrix A11, matrix A12, matrix A21, matrix A22, DIM)</div><div class="ttdoc">Build the matrix A from its sub-matrices.</div><div class="ttdef"><b>Definition:</b> Strassen.c:130</div></div>
+<div class="ttc" id="a_strassen_8h_html_a65af81c037be662b6e35734444da05ec"><div class="ttname"><a href="_strassen_8h.html#a65af81c037be662b6e35734444da05ec">RunStrassenInv</a></div><div class="ttdeci">void RunStrassenInv(matrix A, DIM, prime)</div><div class="ttdoc">Run the Strassen's inverse algorithm, not for benchmarks.</div><div class="ttdef"><b>Definition:</b> Strassen.c:381</div></div>
+<div class="ttc" id="a_strassen_8h_html_a672d032da4b6c620cea503fe809b9f86"><div class="ttname"><a href="_strassen_8h.html#a672d032da4b6c620cea503fe809b9f86">SubMatrix</a></div><div class="ttdeci">matrix SubMatrix(matrix A, DIM, int d)</div><div class="ttdoc">Decompose the matrix in sub-matrix.</div><div class="ttdef"><b>Definition:</b> Strassen.c:77</div></div>
+<div class="ttc" id="a_strassen_8h_html_a710bcbd0cf2ae2f6e07c52b5f956e8b6"><div class="ttname"><a href="_strassen_8h.html#a710bcbd0cf2ae2f6e07c52b5f956e8b6">StrassenMult</a></div><div class="ttdeci">matrix StrassenMult(matrix A, matrix B, DIM, prime)</div><div class="ttdoc">Compute the Strassen's multiplication algorithm.</div><div class="ttdef"><b>Definition:</b> Strassen.c:242</div></div>
+<div class="ttc" id="a_strassen_8h_html_a820607b56134d9de0b23d98d12224b60"><div class="ttname"><a href="_strassen_8h.html#a820607b56134d9de0b23d98d12224b60">ChangeSign</a></div><div class="ttdeci">matrix ChangeSign(matrix A, DIM, prime)</div><div class="ttdoc">Change the sign of the matrix.</div><div class="ttdef"><b>Definition:</b> Strassen.c:61</div></div>
+<div class="ttc" id="a_strassen_8h_html_a9e9760735de9601914b23251caf341fe"><div class="ttname"><a href="_strassen_8h.html#a9e9760735de9601914b23251caf341fe">InvStrassen</a></div><div class="ttdeci">matrix InvStrassen(matrix A, DIM, prime)</div><div class="ttdoc">Compute the Strassen's inversion algorithm.</div><div class="ttdef"><b>Definition:</b> Strassen.c:180</div></div>
+<div class="ttc" id="a_strassen_8h_html_ab8ec494f305be472206501d57ea08700"><div class="ttname"><a href="_strassen_8h.html#ab8ec494f305be472206501d57ea08700">InvStrassenMultStrassen</a></div><div class="ttdeci">matrix InvStrassenMultStrassen(matrix A, matrix I, matrix L, matrix U, matrix P, matrix Z, DIM, prime)</div><div class="ttdoc">Compute the Strassen's inversion algorithm with the Strassen's multiplication algorithm.</div><div class="ttdef"><b>Definition:</b> Strassen.c:313</div></div>
+<div class="ttc" id="a_tools_8h_html"><div class="ttname"><a href="_tools_8h.html">Tools.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>
