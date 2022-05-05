@@ -1,4 +1,14 @@
-﻿#include <stdio.h>
+﻿/**
+ * @file main.c
+ * @author Amine Berbagui
+ * @brief file that contains the main function and launch the program.
+ * @date 2022-05-05
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
+
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
@@ -8,10 +18,6 @@
 #include "MatrixInv.h"
 #include "Strassen.h"
 #include "Benchmarks.h"
-
-/**
- * @file file that contains the main function and launch the program.
-*/
 
 
 /**
@@ -36,6 +42,7 @@ void LaunchProject(matrix A,matrix Abis,matrix L,matrix U, matrix P, matrix S1, 
 
 /**
  * @brief Function that launch the benchmarks with real time execution
+ * You can put/remove comments to benchmark the algorithms you want
 */
 void LaunchBenchmarks(matrix A,matrix L,matrix U,matrix P,matrix Abis,matrix S1, matrix S2,
                         DIM, prime,FILE *fp1, FILE *fp2,FILE *fp3,FILE *fp4,FILE *fp5)
@@ -43,8 +50,8 @@ void LaunchBenchmarks(matrix A,matrix L,matrix U,matrix P,matrix Abis,matrix S1,
 
     BenchmarkNaiveInverse(A,L,U,P,n,p,fp1); 
     BenchmarkStrassenInv(Abis,n,p,fp2);
-    //BenchmarksNaiveMul(S1,S2,n,p,fp3);
-    //BenchmarkStrassenMult(S1,S2,n,p,fp4);
+    BenchmarksNaiveMul(S1,S2,n,p,fp3);
+    BenchmarkStrassenMult(S1,S2,n,p,fp4);
     BenchmarkStrassenInvAndMult(Abis,n,p,fp5);
 
 }
@@ -106,7 +113,7 @@ int main(int argc, char* argv[])
         int max;      
 
         // a prime number fixed
-        int p = 131; 
+        int p = 1151; 
 
         // To export data
         FILE * fp1;
@@ -181,6 +188,12 @@ int main(int argc, char* argv[])
         fclose(fp4);
         fclose(fp5);
 
+        // run python script for plot 
+        // !! WARNING : you might have a different python interpreter path !!
+        // !! if so, please change it at the top of the python script !!
+        if (system("./plots/plot.py") == -1)
+            exit(1);
+        
     }
     // otherwise, we run LaunchProject
     else

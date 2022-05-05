@@ -1,16 +1,19 @@
-﻿#include <stdio.h>
+﻿/**
+ * @file Strassen.c
+ * @author Amine Berbagui
+ * @brief File that compute all Strassen's algorithms
+ * @date 2022-05-05
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <time.h>
 #include "Strassen.h"
 #include "MatrixInv.h"
-
-
-/**
- * @file Implementation of the Strassen's inversion and multiplication algorithms
-*/
-
-
 
 
 

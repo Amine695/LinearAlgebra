@@ -1,12 +1,18 @@
-﻿#include <stdio.h>
+﻿/**
+ * @file Benchmarks.c
+ * @author Amine Berbagui
+ * @brief Launch the benchmarks of our different algorithms.
+ * @date 2022-05-05
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
+#include <stdio.h>
 #include <stdlib.h>
 #include "Benchmarks.h"
 #include "Strassen.h"
 #include "MatrixInv.h"
 
-/**
- * @file Launch the benchmarks of our different algorithms.
-*/
 
 /**
  * @brief Launch the benchmarks for the Naive Inversion matrix

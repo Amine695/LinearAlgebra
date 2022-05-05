@@ -1,12 +1,17 @@
-﻿#include <stdio.h>
+﻿/**
+ * @file LinearSystem.c
+ * @author Amine Berbagui
+ * @brief file that solve a linear system using the LU decomposition AX = B.
+ * @date 2022-05-05
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
+#include <stdio.h>
 #include <stdbool.h>
 #include <stdlib.h>
 #include "LinearSystem.h"
 #include "Tools.h"
-
-/** 
- * @file file that solve a linear system using the LU decomposition AX = B. 
-*/
 
 
 /** @brief

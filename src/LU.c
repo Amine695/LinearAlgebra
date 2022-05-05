@@ -1,4 +1,13 @@
-﻿#include <stdio.h>
+﻿/**
+ * @file LU.c
+ * @author Amine Berbagui
+ * @brief File that compute the LU decomposition
+ * @date 2022-05-05
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <math.h>

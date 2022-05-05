@@ -1,13 +1,38 @@
-﻿from matplotlib import pyplot as plt
-import re
+#!/usr/bin/python3
 
+"""! @brief Python script creating a nice plot to visualize and evaluate the performance of our algorithms.."""
+##
+# @mainpage Documentation du projet d'algorithmique algébrique
+#
+# @section description_main Description
+# Vous trouverez dans cette documentation des informations complètes sur les différents fichiers sources 
+# ainsi que chaque fonction présente.
+#
+# @section notes_main Notes
+# - En plus de cette documentation, réferez vous au rapport détaillant le fonctionnement et la compilation du 
+# projet.
+# 
+# Copyright (c) 2022 Amine Berbagui.
+##
+
+from matplotlib import pyplot as plt
+import re
+"""! Import packages."""
+
+
+
+"""! Open all data files."""
 file1 = "benchmarks/NaiveInversion.txt"
 file2 = "benchmarks/StrassenInversion.txt"
 file3 = "benchmarks/StrassenMultiplication.txt"
 file4 = "benchmarks/NaiveMultiplication.txt"
 file5 = "benchmarks/StrassenInversionMultiplication.txt"
 
+
 regextimeInv = '\d*?\.\d+'
+"""!
+Regex to grab all the float values
+"""
 
 plt.figure(figsize=(12,6))
 with open(file1,"r") as f:
@@ -62,7 +87,7 @@ with open(file5,"r") as f:
         plt.plot(size,timeStrassenInvMult,label = "Strassen Inversion using strassen's multiplication")
 
 
-
+"""! plot and save our generated file"""
 plt.ylabel("Temps (s)",fontsize = 10,fontweight='bold')
 plt.xlabel("Taille",fontsize = 10,fontweight='bold')
 plt.title("Evolution of the computation time as a function of the size of the matrix",fontsize = 12,fontweight='bold')
