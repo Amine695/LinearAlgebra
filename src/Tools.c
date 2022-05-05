@@ -1,12 +1,19 @@
-﻿#include <stdio.h>
+﻿/**
+ * @file Tools.c
+ * @author Amine Berbagui
+ * @brief File that contains all the needed functions for our algorithms such as the addition, substraction,
+ * and the modular inverse.
+ * @date 2022-05-05
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
+#include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include "Tools.h"
 
-
-/**
- *  @file  This file contains all the needed functions for the project 
-*/
 
 
 /**
