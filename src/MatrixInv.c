@@ -131,15 +131,19 @@ void RunNaiveInverse(matrix A,matrix L,matrix U,matrix P,DIM,prime)
     matrix Inv ;
     matrix Z = init_matrix(n);
     matrix identity = Identity(n);
-
     // Computation and time measurements
     double start,end,time_elapsed;
     start = clock();
     Inv = InverseMatrix(identity,L,U,P,Z,n,p);
     end = clock();
+    /** As the matrix L and U correspond to PA = LU, we have:
+     * PA = LU <==> A = LUP^-1 <==> A^-1 = L^(-1) U^(-1) P
+     * However, Inv is actually = L^(-1) U^(-1) so it needs to be multiplied by P
+    */
+    matrix res = matmul(Inv,P,n,p);
     
     // Show results
-    displayMatrix("\nInverse matrix",Inv,n);
+    displayMatrix("\nInverse matrix",res,n);
     printf("\n");
  
     time_elapsed = ((double)end - start) / CLOCKS_PER_SEC;
@@ -150,5 +154,6 @@ void RunNaiveInverse(matrix A,matrix L,matrix U,matrix P,DIM,prime)
     freeMatrix(Z);
     freeMatrix(identity);
     freeMatrix(Inv);
+    freeMatrix(res);
     
 }
