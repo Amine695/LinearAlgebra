@@ -35,10 +35,11 @@ resources: directories
 #Make the Directories
 directories:
 	@mkdir -p $(BUILDDIR)
+	@mkdir -p benchmarks
 
 #Clean only Objecst
 clean:
-	@$(RM) -rf $(BUILDDIR) $(TARGET) benchmarks/*.$(BCHMARK)
+	@$(RM) -rf $(BUILDDIR) $(TARGET) benchmarks 
 
 #execute python script : replace python3 by python if needed
 plot:
