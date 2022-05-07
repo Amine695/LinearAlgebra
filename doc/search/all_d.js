@@ -6,5 +6,6 @@ var searchData=
   ['timestrasseninvmult_3',['timeStrassenInvMult',['../namespaceplot.html#af585ae40a3a2963e209432d6116cb6c0',1,'plot']]],
   ['timestrassenmult_4',['timeStrassenMult',['../namespaceplot.html#a12296a6bd571250afaf765bb374583ab',1,'plot']]],
   ['tools_2ec_5',['Tools.c',['../_tools_8c.html',1,'']]],
-  ['tools_2eh_6',['Tools.h',['../_tools_8h.html',1,'']]]
+  ['tools_2ed_6',['Tools.d',['../_tools_8d.html',1,'']]],
+  ['tools_2eh_7',['Tools.h',['../_tools_8h.html',1,'']]]
 ];
