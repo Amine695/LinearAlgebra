@@ -41,20 +41,61 @@ void LaunchProject(matrix A,matrix Abis,matrix L,matrix U, matrix P, matrix S1, 
 }
 
 /**
- * @brief Function that launch the benchmarks with real time execution
- * You can put/remove comments to benchmark the algorithms you want
+ * @brief Function that launch the benchmarks wanted with real time execution
+ * There are 4 possible options.
 */
 void LaunchBenchmarks(matrix A,matrix L,matrix U,matrix P,matrix Abis,matrix S1, matrix S2,
-                        DIM, prime,FILE *fp1, FILE *fp2,FILE *fp3,FILE *fp4,FILE *fp5)
+                        DIM, prime,FILE *fp1, FILE *fp2,FILE *fp3,FILE *fp4,FILE *fp5,int choice)
 {
+    switch(choice)
+    {
+        case 1:
+            BenchmarkNaiveInverse(A,L,U,P,n,p,fp1); 
+            BenchmarkStrassenInv(Abis,n,p,fp2);
+            break;
 
-    BenchmarkNaiveInverse(A,L,U,P,n,p,fp1); 
-    BenchmarkStrassenInv(Abis,n,p,fp2);
-    BenchmarksNaiveMul(S1,S2,n,p,fp3);
-    BenchmarkStrassenMult(S1,S2,n,p,fp4);
-    BenchmarkStrassenInvAndMult(Abis,n,p,fp5);
+        case 2:
+            BenchmarkNaiveInverse(A,L,U,P,n,p,fp1); 
+            BenchmarkStrassenInvAndMult(Abis,n,p,fp5);
+            break;
+
+        case 3:
+            BenchmarksNaiveMul(S1,S2,n,p,fp3);
+            BenchmarkStrassenMult(S1,S2,n,p,fp4);
+            break;
+        
+        case 4:
+            BenchmarkNaiveInverse(A,L,U,P,n,p,fp1); 
+            BenchmarkStrassenInv(Abis,n,p,fp2);
+            BenchmarkStrassenInvAndMult(Abis,n,p,fp5);
+            BenchmarksNaiveMul(S1,S2,n,p,fp3);
+            BenchmarkStrassenMult(S1,S2,n,p,fp4);
+            break;
+        default:
+            break;
+    }
 
 }
+
+/**
+ * @brief Display the menu for the benchmark
+ * @return choice : the choice chosen by the user
+ */
+int ChooseBenchmark()
+{
+    printf("Press 1 : Naive matrix inversion VS Strassen's inversion using naive multiplication\n");
+    printf("Press 2 : Naive matrix inversion VS Strassen's inversion using Strassen's multiplication\n");
+    printf("Press 3 : Naive multiplication   VS Strassen's multiplication\n");
+    printf("Press 4 : All the algorithms above\n");
+    int choice;
+    if(scanf("%d", &choice) != 0 && (choice - 1)*(choice - 4) > 0)
+    {
+        printf("Error, the input does not match the possible options\n");
+        exit(1);
+    }
+    return choice;
+}
+
 
 /**
  * @brief Function that take the arguments and check that all is good
@@ -101,17 +142,18 @@ void GetArguments(int argc, char *argv[], int *n, int *p)
 */
 int main(int argc, char* argv[])
 {
-    int n,p;
+    int n,p,choice;
     srand(time(NULL));
 
     // if the user type benchmarks, we run LaunchBenchmarks
     if(strcmp(argv[1],"benchmarks") == 0)
     {
-        int k = 1; 
+        // Which functions to benchmark
+        choice = ChooseBenchmark();
 
         // maximum size of 2^k
         int max;      
-
+        int k = 1;
         // a prime number fixed
         int p = 1151; 
 
@@ -164,7 +206,7 @@ int main(int argc, char* argv[])
             Abis = Copy(A,n);
             
             // Launch the benchmarks
-            LaunchBenchmarks(A,L,U,P,Abis,S1,S2,n,p,fp1,fp2,fp3,fp4,fp5);
+            LaunchBenchmarks(A,L,U,P,Abis,S1,S2,n,p,fp1,fp2,fp3,fp4,fp5,choice);
             printf("\n");
             // increment size counter
             k++;
@@ -179,7 +221,7 @@ int main(int argc, char* argv[])
             freeMatrix(P);
         }
         printf("\nData successfully exported in the benchmarks directory! \n");
-        printf("Take a look in the plot directory! \n");
+        printf("Generating plot...\n");
 
         // close files
         fclose(fp1);
@@ -193,7 +235,7 @@ int main(int argc, char* argv[])
         // !! if so, please change it at the top of the python script !!
         if (system("./plots/plot.py") == -1)
             exit(1);
-        
+        printf("Plot generated, take a look in the plot directory! \n");
     }
     // otherwise, we run LaunchProject
     else
