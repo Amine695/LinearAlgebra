@@ -10,9 +10,9 @@ C project with the implementations of several algebraic algorithmic methods such
 - A benchmark to compute time measurements over the different algorithms. 
 
 
-For more details, please see the doxygen documentation using the **index.html** file.
+For more details, please see the doxygen documentation opening the **index.html** file in a browser.
 
 
-Authors:
-Amine Berbagui
+Authors: <br/>
+Amine Berbagui <br/>
 Ghassen Hachani
