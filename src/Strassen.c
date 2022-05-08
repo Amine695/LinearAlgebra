@@ -1,6 +1,6 @@
 ﻿/**
  * @file Strassen.c
- * @author Amine Berbagui
+ * @author Amine Berbagui & Ghassen Hachani
  * @brief File that compute all Strassen's algorithms
  * @date 2022-05-05
  * 

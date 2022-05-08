@@ -1,6 +1,6 @@
 ﻿/**
  * @file LinearSystem.c
- * @author Amine Berbagui
+ * @author Amine Berbagui & Ghassen Hachani
  * @brief file that solve a linear system using the LU decomposition AX = B.
  * @date 2022-05-05
  * @copyright Copyright (c) 2022

@@ -1,6 +1,6 @@
 ﻿/**
  * @file Benchmarks.c
- * @author Amine Berbagui
+ * @author Amine Berbagui & Ghassen Hachani
  * @brief Launch the benchmarks of our different algorithms.
  * @date 2022-05-05
  * @copyright Copyright (c) 2022

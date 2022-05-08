@@ -1,6 +1,6 @@
 ﻿/**
  * @file main.c
- * @author Amine Berbagui
+ * @author Amine Berbagui & Ghassen Hachani
  * @brief file that contains the main function and launch the program.
  * @date 2022-05-05
  * @copyright Copyright (c) 2022

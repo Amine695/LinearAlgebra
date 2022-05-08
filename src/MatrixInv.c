@@ -1,6 +1,6 @@
 ﻿/**
  * @file MatrixInv.c
- * @author Amine Berbagui 
+ * @author Amine Berbagui & Ghassen Hachani
  * @brief File that compute the naive inverse of the matrix
  * @date 2022-05-05
  * 

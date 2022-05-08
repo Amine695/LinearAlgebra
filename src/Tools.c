@@ -1,6 +1,6 @@
 ﻿/**
  * @file Tools.c
- * @author Amine Berbagui
+ * @author Amine Berbagui & Ghassen Hachani
  * @brief File that contains all the needed functions for our algorithms such as the addition, substraction,
  * and the modular inverse.
  * @date 2022-05-05
