@@ -56,18 +56,11 @@ void LaunchBenchmarks(matrix A,matrix L,matrix U,matrix P,matrix Abis,matrix S1,
 
         case 2:
             BenchmarkNaiveInverse(A,L,U,P,n,p,fp1); 
+            BenchmarkStrassenInv(Abis,n,p,fp2);
             BenchmarkStrassenInvAndMult(Abis,n,p,fp5);
             break;
 
         case 3:
-            BenchmarksNaiveMul(S1,S2,n,p,fp3);
-            BenchmarkStrassenMult(S1,S2,n,p,fp4);
-            break;
-        
-        case 4:
-            BenchmarkNaiveInverse(A,L,U,P,n,p,fp1); 
-            BenchmarkStrassenInv(Abis,n,p,fp2);
-            BenchmarkStrassenInvAndMult(Abis,n,p,fp5);
             BenchmarksNaiveMul(S1,S2,n,p,fp3);
             BenchmarkStrassenMult(S1,S2,n,p,fp4);
             break;
@@ -83,12 +76,12 @@ void LaunchBenchmarks(matrix A,matrix L,matrix U,matrix P,matrix Abis,matrix S1,
  */
 int ChooseBenchmark()
 {
+    printf("*************** Welcome to the benchmark menu!****************\n");
     printf("Press 1 : Naive matrix inversion VS Strassen's inversion using naive multiplication\n");
-    printf("Press 2 : Naive matrix inversion VS Strassen's inversion using Strassen's multiplication\n");
+    printf("Press 2 : Naive matrix inversion VS Strassen's inversion using naive multiplication VS Strassen's inversion using Strassen's multiplication\n");
     printf("Press 3 : Naive multiplication   VS Strassen's multiplication\n");
-    printf("Press 4 : All the algorithms above\n");
     int choice;
-    if(scanf("%d", &choice) != 0 && (choice - 1)*(choice - 4) > 0)
+    if(scanf("%d", &choice) != 0 && (choice - 1)*(choice - 3) > 0)
     {
         printf("Error, the input does not match the possible options\n");
         exit(1);
