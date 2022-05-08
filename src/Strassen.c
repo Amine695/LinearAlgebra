@@ -248,8 +248,7 @@ matrix StrassenMult(matrix A, matrix B, DIM,prime)
         return res;
     }
     else
-    {
-        matrix res = init_matrix(n);        
+    {       
         
         //Divide the matrix A and B into 4 sub-matrices
         matrix a11 = SubMatrix(A, n, 1);
@@ -278,7 +277,7 @@ matrix StrassenMult(matrix A, matrix B, DIM,prime)
         matrix c22 = AddMatrix(SubstractMatrix(AddMatrix(m1,m3,n/2,p),m2,n/2,p),m6,n/2,p);
 
         // Assemble the complete matrix
-        res = assembly(c11,c12,c21,c22,n);
+        matrix res = assembly(c11,c12,c21,c22,n);
 
         // memory free
         freeMatrix(a11);
@@ -320,13 +319,12 @@ matrix InvStrassenMultStrassen(matrix A,matrix I,matrix L,matrix U,matrix P,matr
         int value = A[0][0];
         a[0][0] =  inv(value,p); 
         return a;
-    } */
-
+    }
+ */
     // apply the naive inverse instead of the modular inverse
-    if(n <= 64)
+    if(n <= 32)
     {
-        matrix res;
-        res = InverseMatrix(I,L,U,P,Z,n,p);
+        matrix res = InverseMatrix(I,L,U,P,Z,n,p);
         return res;
     }
   
@@ -366,6 +364,7 @@ matrix InvStrassenMultStrassen(matrix A,matrix I,matrix L,matrix U,matrix P,matr
     freeMatrix(X12);
     freeMatrix(X21);
     freeMatrix(X11);
+    freeMatrix(X22);
     freeMatrix(A11);
     freeMatrix(A12);
     freeMatrix(A21);
