@@ -96,7 +96,7 @@ void BenchmarkStrassenMult(matrix A, matrix B, DIM, prime, FILE *fp)
 */
 void BenchmarkStrassenInvAndMult(matrix A, DIM, prime, FILE *fp)
 {
-    matrix identity = Identity(n);
+    matrix I = Identity(n);
     matrix Z = init_matrix(n);
     matrix L = init_matrix(n);
     matrix U = init_matrix(n);
@@ -104,13 +104,17 @@ void BenchmarkStrassenInvAndMult(matrix A, DIM, prime, FILE *fp)
     LU(A,L,U,P,n,p);
     double start,end,time_elapsed;
     start = clock();
-    matrix res = InvStrassenMultStrassen(A,identity,L,U,P,Z,n,p);
+    matrix res = InvStrassenMultStrassen(A,I,L,U,P,Z,n,p);
     end = clock();
     time_elapsed = ((double)end - start) / CLOCKS_PER_SEC;
 
     printf("Strassen's inv and mult    n = %d : %f s\n",n,time_elapsed);
     fprintf(fp,"\n%-4.1d\t\t%4.5f",n,time_elapsed);
 
-
+    freeMatrix(I);
+    freeMatrix(Z);
+    freeMatrix(L);
+    freeMatrix(U);
+    freeMatrix(P);
     freeMatrix(res);
 }
