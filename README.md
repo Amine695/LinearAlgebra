@@ -10,22 +10,26 @@ C project with the implementations of several algebraic algorithmic methods such
 - A benchmark to compute time measurements over the different algorithms. 
 
 
-For more details, please see the doxygen documentation opening the **index.html** file in a browser.
-
 
 ## Compilation
-Un makefile est disponible pour la compilation du projet. Pour l'utiliser, executer la commande `make` dans le dossier principal. Un dossier **build** sera crée qui contiendra les fichiers objets, ainsi qu'un dossier **benchmarks** pour l'exportation des données.
+A makefile is available to make easier the compilation. To use it, please run `make` in the project folder. A **build** folder will be created with all the objects files inside as well a **benchmarks** folder that will contains all the data needed for benchmarks.
 
 ## Execution 
 ### Algorithmes
-Pour exécuter les algorithmes demandés, `./project --n --p` avec **n** la taille de la matrice (préferez une puissance de 2) et **p** un nombre premier.
+To run all the algorithms, please run `./project --n --p` with **n** the size of the matrix (power of 2) and **p** a prime number.
 
 ### Benchmark
-Pour exécuter les benchmarks, `./project benchmarks n` avec **n** la taille limite en puissance de 2 donc par exemple, n = 11 fait tourner les algorithmes sur des tailles allant de $2^1$ à $2^{11}$.
-Une fois exécuter, on vous proposera de choisir la comparaison que vous souhaitez effectuer.<br/>
-A la fin du benchmark, un **plot** de vos résultat sera généré automatiquement.<br/> Toutefois, si rien n'apparait ou qu'une erreur s'affiche, utiliser la commande `make plot` directement.<br/>
-Compiler sous **Linux**. Si vous utilisez **python** au lieu de **python3** dans le shell, veuillez changer le chemin de l'interpréteur python en haut de `plot.py`. 
+To run the benchmarks, please run `./project benchmarks n` with **n** the limit size in power of 2, so for exemple n = 11 would run with matrices of size <img src="https://render.githubusercontent.com/render/math?math=2^1"> to <img src="https://render.githubusercontent.com/render/math?math=2^{11}">.
+Once executed, a menu prints out asking you which algorithm you want to compare.<br/>
+Finally, at the end, a **plot** of the results is automatically generated and should appear on the screen.<br/> However, if nothing happens or an error is display, use the command `make plot` directly.<br/>
+Compiler sous **Linux**. If you use **python** instead of **python3** in the temrinal, kindly change the python interpreter's path at the top of `plot.py`. <br/>.
 
-Authors: <br/>
+## Documentation
+A **Doxygen** documentation is available with clear explanations. Open the `index.html` which is in the *doc* folder.
+
+Please refer to the  **compilation** section of the report for more details.
+<br/><br/>
+
+## Authors: <br/>
 Amine Berbagui <br/>
 Ghassen Hachani
